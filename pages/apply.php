@@ -1,7 +1,21 @@
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+<center>
+
+    </center>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Procurement System | </title>
   <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
@@ -28,9 +42,11 @@
   <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-</head>
-<body>
-	<?php 
+        
+    </head>
+
+ <body class="hold-transition skin-blue fixed sidebar-mini">
+ 	<?php 
 	$n = $_GET['id'];
 	include("config.php");
     $mydb ="SELECT * FROM   requests WHERE id ='".$n."' ";
@@ -47,10 +63,11 @@
          }
      }           
 	 ?>
+
+       <div style="margin-right: 150px; margin-left: 150px">
  
-<div style="margin-right: 150px; margin-left: 150px">
-  <form role="form" method="post" action="apply.php">
-  <div class="modal-content">
+		<form action="" method="post" enctype="multipart/form-data">
+			<div class="modal-content">
     <div class="modal-body">
     	<ol class="breadcrumb float-sm-right">
              <li class="breadcrumb-item"><a href="procurement_board.php">Home</a>><a href="lished.php">Publishedrequests</a>><a href="lished.php">Details</a>>Apply</li>
@@ -130,104 +147,106 @@
 
             
             </div>
-           
-            
-         <div class="row">
-              <?php 
-              $n = $_GET['id'];
-              include("config.php");
-              $mydb ="SELECT * FROM   publish WHERE id ='".$n."' ";
-              $run=mysqli_query($db,$mydb);
-              if($run == true){
-                  while($row=mysqli_fetch_array($run)){
-                      $a =$row[0];
-                      $b=$row[1];
-                      $c  =$row[2];
-                      $d =$row[3];
-                      $e =$row[5];
-                      $f =$row[4];
-                      $g =$row[7];
-                      if($e !=''){
-                      echo'<div class="col-sm-4">'.$e.
-            '</div>'.'
-            <div class="col-sm-4">
-              <input type="file" name="doc1" class="form-control" placeholder="Enter...." >
-            </div>
-             <div class="col-sm-4">
-              
-            </div>
-            
-            </div>';
-                    }
-                   }
-               }           
-             ?>
-              <br/>
+
+			---
+					
+              <div class="row">
+               
+                <?php 
+	              $n = $_GET['id'];
+	              include("config.php");
+	              $mydb ="SELECT * FROM   publish WHERE id ='".$n."' ";
+	              $run=mysqli_query($db,$mydb);
+	              if($run == true){
+	                  while($row=mysqli_fetch_array($run)){
+	                      $a =$row[0];
+	                      $b=$row[1];
+	                      $c  =$row[2];
+	                      $d =$row[3];
+	                      $e =$row[5];
+	                      $f =$row[4];
+	                      $h =$row[6];
+	                      $g =$row[7];
+	                      if($h !=''){
+	                      echo'<div class="col-sm-4">'.$e.
+	            '</div>'.'
+	            <div class="col-sm-4">
+	              <input type="file" name="doc1" class="form-control" placeholder="Enter...." >
+	            </div>
+	             <div class="col-sm-4">
+	              
+	            </div>
+	            
+	            </div>';
+	                    }
+	                   }
+	               }           
+	             ?>
+	             <br/>
              <div class="row">
-              <?php 
-              $n = $_GET['id'];
-              include("config.php");
-              $mydb ="SELECT * FROM   publish WHERE id ='".$n."' ";
-              $run=mysqli_query($db,$mydb);
-              if($run == true){
-                  while($row=mysqli_fetch_array($run)){
-                      $a =$row[0];
-                      $b=$row[1];
-                      $c  =$row[2];
-                      $d =$row[3];
-                      $e =$row[5];
-                      $f =$row[4];
-                      $h =$row[6];
-                      $g =$row[7];
-                      if($h !=''){
-                      echo'<div class="col-sm-4">'.$h.
-            '</div>'.'
-            <div class="col-sm-4">
-              <input type="file" name="doc2" class="form-control" placeholder="Enter...." >
-            </div>
-             <div class="col-sm-4">
-              
-            </div>
-            
-            </div>';
-                    }
-                   }
-               }           
-             ?>
-            
-            <br/>
+          <?php 
+          $n = $_GET['id'];
+          include("config.php");
+          $mydb ="SELECT * FROM   publish WHERE id ='".$n."' ";
+          $run=mysqli_query($db,$mydb);
+          if($run == true){
+              while($row=mysqli_fetch_array($run)){
+                  $a =$row[0];
+                  $b=$row[1];
+                  $c  =$row[2];
+                  $d =$row[3];
+                  $e =$row[5];
+                  $f =$row[4];
+                  $h =$row[6];
+                  $g =$row[7];
+                  if($h !=''){
+                  echo'<div class="col-sm-4">'.$h.
+        '</div>'.'
+        <div class="col-sm-4">
+          <input type="file" name="doc2" class="form-control" placeholder="Enter...." >
+        </div>
+         <div class="col-sm-4">
+          
+        </div>
+        
+        </div>';
+                }
+               }
+           }           
+         ?>
+           <br/>
              <div class="row">
-              <?php 
-              $n = $_GET['id'];
-              include("config.php");
-              $mydb ="SELECT * FROM   publish WHERE id ='".$n."' ";
-              $run=mysqli_query($db,$mydb);
-              if($run == true){
-                  while($row=mysqli_fetch_array($run)){
-                      $a =$row[0];
-                      $b=$row[1];
-                      $c  =$row[2];
-                      $d =$row[3];
-                      $e =$row[5];
-                      $f =$row[4];
-                      $h =$row[6];
-                      $g =$row[7];
-                      if($g !=''){
-                      echo'<div class="col-sm-4">'.$g.
-            '</div>'.'
-            <div class="col-sm-4">
-              <input type="file" name="doc3" class="form-control" placeholder="Enter...." >
-            </div>
-             <div class="col-sm-4">
-              
-            </div>
-            
-            </div>';
-                    }
-                   }
-               }           
-             ?>
-              <br/>
+          <?php 
+          $n = $_GET['id'];
+          include("config.php");
+          $mydb ="SELECT * FROM   publish WHERE id ='".$n."' ";
+          $run=mysqli_query($db,$mydb);
+          if($run == true){
+              while($row=mysqli_fetch_array($run)){
+                  $a =$row[0];
+                  $b=$row[1];
+                  $c  =$row[2];
+                  $d =$row[3];
+                  $e =$row[5];
+                  $f =$row[4];
+                  $h =$row[6];
+                  $g =$row[7];
+                  if($g !=''){
+                  echo'<div class="col-sm-4">'.$g.
+        '</div>'.'
+        <div class="col-sm-4">
+          <input type="file" name="doc3" class="form-control" placeholder="Enter...." >
+        </div>
+         <div class="col-sm-4">
+          
+        </div>
+        
+        </div>';
+                }
+               }
+           }           
+         ?>
+         <br/>
           
             <div class="row">
               <div class="col-sm-4">
@@ -248,44 +267,59 @@
       <div class="col-sm-4">
             	</div>
     </div>
-    </div>
- 
-      </form>
-      </div>
-        <?php 
-		if (isset($_POST["apply"])) {
-			include("config.php");
-			$id			= $_POST["id"];
-      $tender = $_POST["tender"];
+    </div>              
+	</form>
+</div>
+        <?php
+        include("config.php");
+        if (isset($_POST["apply"])) {
+        	$id			= $_POST["id"];
+			$tender = $_POST["tender"];
 			$name			= $_POST["name"];
 			$adress			= $_POST["adress"];
 			$person		= $_POST["person"];
 			$title	= $_POST["title"];
-      $email     = $_POST["email"];
-      $contact     = $_POST["contact"];
-			$doc1name	=$_FILES['doc1']['name']; 
-      $doc1tmpname =$_FILES['doc1']['tmp_name'];
-      $path    ="files/".$doc1name;
-      $doc2name =$_FILES['doc2']['name']; 
-      $doc2tmpname =$_FILES['doc2']['tmp_name'];
-      $path2    ="files/".$doc2name;
-      $doc3name =$_FILES['doc3']['name']; 
-      $doc3tmpname =$_FILES['doc3']['tmp_name'];
-      $path3    ="files/".$doc3name;
-			$dat    =$_POST["dat"];
-			$sql = " INSERT INTO applications (id,tender,name,adress,person,title,email,contact,doc1,doc2,doc3,dat)
-			VALUES('$id','$tender','$name','$adress','$person','$title','$email','$contact','$doc1name','$doc2name','$doc3name','$dat')"; 
-			$run=mysqli_query($db,$sql);
-			if ($run==true) {
-      move_uploaded_file($doc1tmpname, $path );
-      move_uploaded_file($doc2tmpname, $path2 );
-      move_uploaded_file($doc3tmpname, $path3 );
-     
-				
-			}else{
-				echo "ERROR: Hush! sorry $sql." . mysqli_error($db);
-			}
-		}
-		?>
-</body>
+      		$email     = $_POST["email"];
+      		$contact     = $_POST["contact"];
+
+        
+          	$doc1name =$_FILES['doc1']['name'];
+          	$filetmpname  =$_FILES['doc1']['tmp_name'];
+          	$path    ="files/".$doc1name; 
+          	$doc2name =$_FILES['doc2']['name'];
+          	$filetmpname2  =$_FILES['doc2']['tmp_name'];
+          	$path2    ="files/".$doc2name; 
+
+          	$doc3name =$_FILES['doc3']['name'];
+          	$filetmpname3  =$_FILES['doc3']['tmp_name'];
+          	$path3    ="files/".$doc3name; 
+          	$dat    =$_POST["dat"];
+
+            $sql = "INSERT INTO applications(id,tender,name,adress,person,title,email,contact,doc1,doc2,doc3,dat	
+)VALUES('".$id."','".$tender."','".$name."','".$adress."','".$person."','".$title."','".$email."','".$contact."','".$doc1name."','".$doc2name."','".$doc3name."','".$dat."')";
+            $run=mysqli_query($db,$sql);
+            if ($run==true) {
+             
+              move_uploaded_file($filetmpname, $path );
+              move_uploaded_file($filetmpname2, $path2 );
+              move_uploaded_file($filetmpname3, $path3 );
+              echo '<script type="text/javascript">alert("You have succefully submited your application");window.location=\'display.php\';</script>';
+              }else{
+                echo "ERROR: Hush! sorry there was error try again." . mysqli_error($db);
+              }
+
+        
+
+        }
+        
+        ?>
+       
+            
+    </body>
+      <script type="text/javascript" src="/example/eris1/plugins/jQuery/jQuery-2.1.4.min.js"> </script>
+      <script type="text/javascript" src="/example/eris1/bootstrap/js/bootstrap.min.js" ></script>
+      <script src="/example/eris/dist/js/app.min.js"></script> 
 </html>
+ 
+ 
+         
