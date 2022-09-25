@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<form>
+		Email
+		<input type="text" name="email" id="typeselect">
+		Password
+		<input type="text" name="email">
+	</form>
+
+</body>
+
+<script type="text/javascript">
+	//onload event
+	window.onload = function(){
+	  //get elements  
+	  var typeselect = document.getElementById("typeselect");
+	  var typeImg = document.getElementById('typeselectIMG');
+	  var secondstep = document.getElementById("secondstep"); 
+	  var quantInput = document.getElementById("quantity");
+	  var quantImg = document.getElementById("quantityIMG");
+	  //select event
+	  typeselect.onchange = function(){
+	   if( this.value != 'off' ){
+	    typeImg.style.visibility = 'visible';
+	    secondstep.style.visibility = 'visible';
+	   }else{
+	    typeImg.style.visibility = 'hidden';
+	    quantImg.style.visibility = 'hidden';
+	    secondstep.style.visibility = 'hidden';
+	   }
+	  };
+	  //input changed event
+	  quantInput.oninput = function(){
+	    if(this.value != ''){
+	     quantImg.style.visibility = 'visible';     
+	    }else{
+	     quantImg.style.visibility = 'hidden';
+	    }
+	  };
+	};
+</script>
+</html>

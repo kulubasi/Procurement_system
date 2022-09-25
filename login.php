@@ -9,8 +9,8 @@ require_once("config.php");
 		$username=$_POST['username'];
 		$password=$_POST['password'];
 		if ($username=="" OR $password=="" ){
-			$message="Plaese enter username and password!";
-			echo '<script type="text/javascript">alert("Plaese enter username and password!");window.location=\'index.php\';</script>';
+			$message="Please enter username and password!";
+			echo '<script type="text/javascript">alert("Please enter username and password!");window.location=\'index.php\';</script>';
 		}else{
 			$sql = "SELECT *FROM users WHERE username='".$username."' AND password ='".$password."' ";
 			$con = mysqli_query($db,$sql);

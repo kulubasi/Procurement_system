@@ -28,7 +28,7 @@
   <form action="login.php" method="post">
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg">Sign in to start your journey</p>
 
         <div class="input-group mb-3">
           <input type="text" class="form-control" name="username" placeholder="Username">
@@ -55,7 +55,8 @@
         <p>- -</p>
         <button class="btn btn-block btn-primary" type="submit" name="login">
           <i class="fa fa-unlock"></i> Sign in
-        </button>
+        </button><br>
+        <p>Dont have an account <a href="pages/signup.php">Signup</a></p>
       
       </div>
 
