@@ -92,7 +92,7 @@ if(isset($_SESSION['$username'])){
           <img src="../dist/img/FaceApp_1643357366584_1.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Nkwine Innocent</a>
+          <a href="#" class="d-block">Supplier</a>
         </div>
       </div>
 
@@ -102,7 +102,7 @@ if(isset($_SESSION['$username'])){
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
            <li class="nav-item ">
-            <a href="Departmentpage.php" class="nav-link">
+            <a href="departmentpage.php" class="nav-link">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Home
@@ -110,7 +110,7 @@ if(isset($_SESSION['$username'])){
             </a>
           </li>
           <li class="nav-item has-treeview ">
-            <a href="#" class="nav-link ">
+            <a href="unit.php" class="nav-link ">
               <i class="fa fa-massega"></i>
               <p>
                 Message
@@ -119,14 +119,14 @@ if(isset($_SESSION['$username'])){
           </li>
           <li class="nav-item has-treeview ">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-building"></i><p>Department details
+              <i class="nav-icon fas fa-building"></i><p>Available bids
                   </p></a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="proplan.php" class="nav-link"><i class="nav-icon fas fa-clone"></i><p>Profile</p></a>
+            <a href="#" class="nav-link"><i class="nav-icon fas fa-clone"></i><p>Previous Contracts</p></a>
     
           </li>
-          <li class="nav-item has-treeview">
+          <!-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-palette"></i>
               <p>
@@ -134,24 +134,24 @@ if(isset($_SESSION['$username'])){
                 </i>
               </p>
             </a>
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="re.php" class="nav-link active">
+          </li> -->
+          <!-- <li class="nav-item has-treeview">
+            <a href="re.php" class="nav-link">
               <i class="nav-icon fas fa-shopping-cart"></i>
               <p>
                Requested items
               </p>
             </a>
             
-          </li>
-          <li class="nav-item has-treeview ">
+          </li> -->
+          <!-- <li class="nav-item has-treeview ">
             <a href="apro.php" class="nav-link ">
               <i class="nav-icon fas fa-gamepad"></i>
               <p>
                 Aprroved requests
               </p>
             </a>
-          </li>
+          </li> -->
           <li class="nav-item has-treeview ">
             <a href="#" class="nav-link ">
               <i class="fas fa-inventory"></i>
@@ -185,10 +185,86 @@ if(isset($_SESSION['$username'])){
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Requested items  </h3> 
+              <h3 class="card-title">Dash board  </h3> <button class="btn btn-success btn-sm" style="margin-left:1%" data-toggle="moddal" data-target="#add"><i class="fa fa-plus">Apply for bid</i></button> 
               <div class="modal fade show" id="add" aria-modal="true">
         <div class="modal-dialog modal-md">
-             
+              <form method="post" action="requ.php ">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title" align="center">Add Request</h3>
+              </div>
+                <div class="card-body">
+                    <div class="row">
+                  <div class="col-sm-4">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label>Item name.</label>
+                        <input type="text" class="form-control" placeholder="Enter ..." name="item">
+                        
+                      </div>
+                    </div>
+                  <div class="col-sm-4">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label>Quantity</label>
+                        <input type="text" class="form-control" placeholder="Enter ..." name="quantity">
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label>Purpose</label>
+                         <input type="text" class="form-control" placeholder="Enter ..." name="purpose">
+                      </div>
+                    </div>
+                  </div>
+                    <div class="row">
+                    <div class="col-sm-4">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label>Requested By</label>
+                        <input type="text" class="form-control" placeholder="Enter ..." name="requestor">
+                      </div>
+                    </div>
+                  <div class="col-sm-4">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label>Date Processed</label>
+                        <input type="date" class="form-control" placeholder="00.00" name="dat">
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label>Processed By</label>
+                        <input type="text" class="form-control" placeholder="Enter ..." name="processor">
+                      </div>
+                    </div>
+                    </div>
+                    <div class="col-sm-12">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label>Department</label>
+                        <input type="text" class="form-control" placeholder="Enter ..." name="department">
+                      </div>
+                    </div>
+                  
+                </div>
+            </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary" name="save">Save</button>
+            </div>
+          </div>
+              </form>
         </div>
         <!-- /.modal-dialog -->
       </div>
@@ -214,62 +290,70 @@ if(isset($_SESSION['$username'])){
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-               <table class="table table-bordered table-striped">
-               <thead>
-            <tr>
-              <th>Item id</th>
-              <th>Item name</th>
-              <th>Quantity</th>
-              <th> Purpose</th>
-              <th>Requested on</th>
-              <th>Requested by</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr> 
-          </thead> 
-          <tbody>
-            <?php
-            //$user  =$_SESSION['$username_j'];
-            include("config.php");
-            $mydb ="SELECT * FROM   requests";
-            $run=mysqli_query($db,$mydb);
-            if($run == true){
-              
-                while($row=mysqli_fetch_array($run)){
-                    $a =$row[0];
-                    $b=$row[1];
-                    $c  =$row[2];
-                    $d =$row[3];
-                    $e =$row[5];
-                    $f =$row[4];
-                    $g =$row[8];
-                    
-                    
-                  echo '<tr>';
-                    echo'<td>' . $a.'</td>';
-                    echo'<td>' .$b.'</td>';
-                    echo'<td>' .$c.'</td>';
-                    echo'<td>' .$d.'</td>';
-                    echo'<td>' .$e.'</td>';
-                    echo'<td>' .$f.'</td>';
-                    echo'<td>' .$g.'</td>';
-                    echo  '<td align="center" > <a title="Edit" href="\Procurement_system\pages\approve.php?id='.$a.'" < class="btn btn-primary btn-xs  "> <i class="fa fa-edit"></i></a>  <a title="Delete" href="\example\capston\project\look.php?id='.$a.'"  class="btn btn-danger btn-xs  "><i class="fa fa-trash"></i></a></td>';
-                  echo '</tr>';
-     
-                }
-         
-            }else{
-            echo "<h3 >There are no pedding requests</h3>". mysqli_error($db);
-            }
-                  
-            ?>
-              
-            </tbody>
-        </table> 
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3><i class="fa fa-users"></i> 0</h3>
+
+                <p>Open bids</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3><i class="fa fa-shopping-cart"></i>53</h3>
+
+                <p>Previous Contracts</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3><i class="fa fa-cart-plus"></i>44</h3>
+
+                <p>Recieved items</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3><i class="fa fa-palette"></i> 65</h3>
+
+                <p>Contract Status</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
         <!-- /.row -->
         <!-- Main row -->
-
-        <button class="btn btn-primary" onclick="tableToCSV()">Export to CSV</button> 
         
       </div><!-- /.container-fluid -->
     </section>
@@ -343,68 +427,6 @@ if(isset($_SESSION['$username'])){
     });
   });
 </script>
-
-<script type="text/javascript">
-        function tableToCSV() {
- 
-            // Variable to store the final csv data
-            var csv_data = [];
- 
-            // Get each row data
-            var rows = document.getElementsByTagName('tr');
-            for (var i = 0; i < rows.length; i++) {
- 
-                // Get each column data
-                var cols = rows[i].querySelectorAll('td,th');
- 
-                // Stores each csv row data
-                var csvrow = [];
-                for (var j = 0; j < cols.length; j++) {
- 
-                    // Get the text data of each cell
-                    // of a row and push it to csvrow
-                    csvrow.push(cols[j].innerHTML);
-                }
- 
-                // Combine each column value with comma
-                csv_data.push(csvrow.join(","));
-            }
- 
-            // Combine each row data with new line character
-            csv_data = csv_data.join('\n');
- 
-            // Call this function to download csv file 
-            downloadCSVFile(csv_data);
- 
-        }
- 
-        function downloadCSVFile(csv_data) {
- 
-            // Create CSV file object and feed
-            // our csv_data into it
-            CSVFile = new Blob([csv_data], {
-                type: "text/csv"
-            });
- 
-            // Create to temporary link to initiate
-            // download process
-            var temp_link = document.createElement('a');
- 
-            // Download csv file
-            temp_link.download = "GfG.csv";
-            var url = window.URL.createObjectURL(CSVFile);
-            temp_link.href = url;
- 
-            // This link should not be displayed
-            temp_link.style.display = "none";
-            document.body.appendChild(temp_link);
- 
-            // Automatically click the link to
-            // trigger download
-            temp_link.click();
-            document.body.removeChild(temp_link);
-        }
-    </script>
 </body>
 </html>
 
