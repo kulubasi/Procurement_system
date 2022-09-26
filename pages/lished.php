@@ -119,8 +119,8 @@ if(isset($_SESSION['$username'])){
                   </p></a>
           </li>
           <li class="nav-item">
-            <a href="department.php" class="nav-link">
-              <p>Postporned requests
+            <a href="" class="nav-link">
+              <p>Postponed requests
                   </p></a>
           </li>
           <li class="nav-item">
