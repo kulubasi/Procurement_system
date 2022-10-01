@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION['$username'])){
+}else{
+    header('location:../index.php');
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,7 +56,8 @@
         <div class="col-sm-1">
           </div>
           <div class="col-sm-6">
-            <?php 
+            <?php
+            echo $_SESSION['$username'];
   $a = $_GET['bid'];
   $c = $_GET['id'];
   include("config.php");
@@ -66,29 +74,31 @@
             $g =$row[7];
             $h =$row[4];
             $i =$row[8];
-            $j =$row[9];
+            $z=$row[2];
+            $j=$row[9];
+            $y=$row[10];
             echo "<h2> Tender details</dh2>";
 
             echo'<h4>'."Item id".'</h4>';
             echo$a;
             echo'<h4>'."Item name".'</h4>';
-            echo$b;
-            echo'<h4>'."Quantity".'</h4>';
             echo$c;
-            echo'<h4>'."Type".'</h4>';
+            echo'<h4>'."Quantity".'</h4>';
             echo$d;
-            echo'<h4>'."Specifications".'</h4>';
+            echo'<h4>'."Type".'</h4>';
             echo$h;
-            echo'<h4>'."Required documents".'</h4>';
+            echo'<h4>'."Specifications".'</h4>';
             echo$e;
-            echo'<br/>';
-            echo$f; 
+            echo'<h4>'."Required documents".'</h4>';
+            echo$f;
             echo'<br/>';
             echo$g; 
+            echo'<br/>';
+            echo$i; 
             echo'<h4>'."Other requirements".'</h4>';
-            echo$i;
-            echo'<h4>'."Deadline for pender apllication".'</h4>';
             echo$j;
+            echo'<h4>'."Deadline for pender apllication".'</h4>';
+            echo$y;
             
 
 
@@ -107,7 +117,7 @@
     if($run == true){
         while($row=mysqli_fetch_array($run)){
             $a =$row[0];
-            $b=$row[1];
+            $b =$row[1];
             $c  =$row[2];
             $d =$row[3];
             $e =$row[5];
@@ -116,45 +126,47 @@
             $h =$row[4];
             $i =$row[8];
             $j =$row[9];
+            $u =$row[13];
+            $k =$row[12];
+            $p =$row[14];
             echo "<h2> Application details</dh2>";
 
             echo'<h4>'."Company name".'</h4>';
-            echo$c;
-            echo'<h4>'."Location".'</h4>';
             echo$d;
-            echo'<h4>'."Contact person".'</h4>';
-            echo$c;
-            echo'<h4>'."Title".'</h4>';
+            echo'<h4>'."Location".'</h4>';
             echo$h;
-            echo'<h4>'."Email".'</h4>';
+            echo'<h4>'."Contact person".'</h4>';
             echo$e;
-            echo'<h4>'."Phone number".'</h4>';
+            echo'<h4>'."Title".'</h4>';
             echo$f;
+            echo'<h4>'."Email".'</h4>';
+            echo$g;
+            echo'<h4>'."Phone number".'</h4>';
+            echo$i;
             echo'<h4>'."Price".'</h4>';
-            echo$j;
+            echo$p;
+             echo'<h4>'."Application date".'</h4>';
+            echo$k;
             echo'<h4>'."<b>Required Documents</b>".'</h4>';
-            echo'<h4>'."Document 1".'<a title="download"   href="apply.php?id='.$a.'" >  <i class="fas fa-download fa-xl"></i></a>'.'</h4>';
-             echo'<h4>'."Document 1".'<a title="download"   href="apply.php?id='.$a.'"  >  <i class="fas fa-download"></i></a>'.'</h4>';
-             echo'<h4>'."Document 1".'<a title="download"   href="apply.php?id='.$a.'"   ">  <i class="fas fa-download"></i></a>'.'</h4>';
+            echo'<h4>'."Document 1".'<a title="download"   href="download.php?id='.$b.'" >  <i class="fas fa-download fa-xl"></i></a>'.'</h4>';
+             echo'<h4>'."Document 1".'<a title="download"   href="download1.php?id='.$b.'"  >  <i class="fas fa-download"></i></a>'.'</h4>';
+             echo'<h4>'."Document 1".'<a title="download"   href="download2.php?id='.$b.'"   ">  <i class="fas fa-download"></i></a>'.'</h4>';
             echo'<br/>';
-            echo'
-              <a title="Edit"   href="apply.php?id='.$a.'"  class="btn btn-primary btn-xm  ">  Respond</a> 
-            </div>
-            
-            
-            </div>';
-
 
          }
      }           
    ?>
-
+   
+    <form action="remark.php" method="post">
+              <p>Send feedback</p>
+              <input hidden type="text" name="supplier" value="<?php echo $u;?>">
+              <input hidden type="tex" name="item" value="<?php echo $z;?>">
+              <textarea class="form-control" name="remarks"></textarea>
+              <input class="btn btn-primary" type="submit" name="send" value="send">
+            </form>
           </div>
       </div>
         
-
-
-
     </div>
  
       </form>

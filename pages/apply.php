@@ -1,5 +1,11 @@
 
-
+<?php
+session_start();
+if(isset($_SESSION['$username'])){
+}else{
+    header('location:../index.php');
+}
+?>
 
 <!DOCTYPE html>
 <html>
@@ -218,6 +224,7 @@
              <div class="row">
           <?php 
           $n = $_GET['id'];
+          $f =$_GET['bid'];
           include("config.php");
           $mydb ="SELECT * FROM   publish WHERE id ='".$n."' ";
           $run=mysqli_query($db,$mydb);
@@ -294,9 +301,9 @@
             $filetmpname3  =$_FILES['doc3']['tmp_name'];
             $path3    ="files/".$doc3name; 
             $dat    =$_POST["dat"];
-
-            $sql = "INSERT INTO applications(id,tender,name,adress,person,title,email,contact,doc1,doc2,doc3,dat  
-)VALUES('".$id."','".$tender."','".$name."','".$adress."','".$person."','".$title."','".$email."','".$contact."','".$doc1name."','".$doc2name."','".$doc3name."','".$dat."')";
+            $a =$_SESSION['$username']
+            $sql = "INSERT INTO applications(id,tender,name,adress,person,title,email,contact,doc1,doc2,doc3,dat,user  
+)VALUES('".$id."','".$tender."','".$name."','".$adress."','".$person."','".$title."','".$email."','".$contact."','".$doc1name."','".$doc2name."','".$doc3name."','".$dat."','".$a."')";
             $run=mysqli_query($db,$sql);
             if ($run==true) {
              

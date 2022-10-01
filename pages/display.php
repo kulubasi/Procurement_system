@@ -199,14 +199,15 @@ if(isset($_SESSION['$username'])){
               
                 while($row=mysqli_fetch_array($run)){
                     $a =$row[0];
-                    $b=$row[1];
-                    $c  =$row[2];
-                    $d =$row[3];
-                    $e =$row[9];
-                    $f =$row[4];
-                    $g =$row[7];  
+                    $y=$row[1]; 
+                    $b=$row[2];
+                    $c  =$row[3];
+                    $d =$row[4];
+                    $e =$row[10];
+                    $f =$row[5];
+                    $g =$row[8];  
                     $n+=1;                  
-                  echo $n.'.'.' '. $c. $b.' ere/is needed before '.$e. ' <a title="View details"   href="details1.php?id='.$a.'"  class="btn btn-primary btn-xm  ">  <i class="fa fa-eye"></i></a>'.'<br/>'.'<br/>';
+                  echo $n.'.'.' '. $c. $b.' ere/is needed before '.$e. ' <a title="View details"   href="details1.php?id='.$a.'&bid='.$y.'"  class="btn btn-primary btn-xm  ">  <i class="fa fa-eye"></i></a>'.'<br/>'.'<br/>';
      
                 }
          
