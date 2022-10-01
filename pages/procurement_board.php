@@ -134,7 +134,7 @@ if(isset($_SESSION['$username'])){
                   </p></a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="applications.php" class="nav-link">
               <p>Applications
                   </p></a>
           </li>
@@ -244,7 +244,7 @@ if(isset($_SESSION['$username'])){
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer">More info <?php echo $_SESSION['$name'] ;  ?> <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
