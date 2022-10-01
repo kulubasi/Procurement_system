@@ -92,7 +92,7 @@ if(isset($_SESSION['$username'])){
           <img src="../dist/img/FaceApp_1643357366584_1.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Nkwine Innocent</a>
+          <a href="#" class="d-block">Supplier</a>
         </div>
       </div>
 
@@ -102,7 +102,7 @@ if(isset($_SESSION['$username'])){
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
            <li class="nav-item ">
-            <a href="departmentpage.php" class="nav-link">
+            <a href="supplierpage.php" class="nav-link">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Home
@@ -113,27 +113,54 @@ if(isset($_SESSION['$username'])){
             <a href="unit.php" class="nav-link ">
               <i class="fa fa-massega"></i>
               <p>
-                Notifications
+                Message
               </p>
             </a>
           </li>
           <li class="nav-item has-treeview ">
-            <a href="unit.php" class="nav-link ">
-              <i class="fa fa-massega"></i>
+            <a href="display.php" class="nav-link active">
+              <i class="nav-icon fas fa-building"></i><p>Available bids
+                  </p></a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link"><i class="nav-icon fas fa-clone"></i><p>Previous Contracts</p></a>
+    
+          </li>
+          <!-- <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-palette"></i>
               <p>
-                Tenders applied for
+                Future required items
+                </i>
               </p>
             </a>
-          </li>
+          </li> -->
+          <!-- <li class="nav-item has-treeview">
+            <a href="re.php" class="nav-link">
+              <i class="nav-icon fas fa-shopping-cart"></i>
+              <p>
+               Requested items
+              </p>
+            </a>
+            
+          </li> -->
+          <!-- <li class="nav-item has-treeview ">
+            <a href="apro.php" class="nav-link ">
+              <i class="nav-icon fas fa-gamepad"></i>
+              <p>
+                Aprroved requests
+              </p>
+            </a>
+          </li> -->
           <li class="nav-item has-treeview ">
-            <a href="unit.php" class="nav-link ">
-              <i class="fa fa-massega"></i>
+            <a href="#" class="nav-link ">
+              <i class="fas fa-inventory"></i>
               <p>
-                Profile
+                Recieved items
               </p>
             </a>
           </li>
-         
+          
                   </ul>
       </nav>
       <!-- /.sidebar-menu -->

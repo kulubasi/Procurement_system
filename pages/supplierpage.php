@@ -102,7 +102,7 @@ if(isset($_SESSION['$username'])){
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
            <li class="nav-item ">
-            <a href="departmentpage.php" class="nav-link">
+            <a href="supplierpage.php" class="nav-link">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Home
@@ -118,7 +118,7 @@ if(isset($_SESSION['$username'])){
             </a>
           </li>
           <li class="nav-item has-treeview ">
-            <a href="#" class="nav-link">
+            <a href="display.php" class="nav-link">
               <i class="nav-icon fas fa-building"></i><p>Available bids
                   </p></a>
           </li>
@@ -310,7 +310,7 @@ if(isset($_SESSION['$username'])){
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3><i class="fa fa-shopping-cart"></i>53</h3>
+                <h3><i class="fa fa-shopping-cart"></i>0</h3>
 
                 <p>Previous Contracts</p>
               </div>
@@ -325,7 +325,7 @@ if(isset($_SESSION['$username'])){
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3><i class="fa fa-cart-plus"></i>44</h3>
+                <h3><i class="fa fa-cart-plus"></i>0</h3>
 
                 <p>Recieved items</p>
               </div>
@@ -340,7 +340,7 @@ if(isset($_SESSION['$username'])){
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3><i class="fa fa-palette"></i> 65</h3>
+                <h3><i class="fa fa-palette"></i> 0</h3>
 
                 <p>Contract Status</p>
               </div>

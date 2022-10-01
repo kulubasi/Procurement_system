@@ -119,8 +119,8 @@ if(isset($_SESSION['$username'])){
                   </p></a>
           </li>
           <li class="nav-item">
-            <a href="department.php" class="nav-link">
-              <p>Postporned requests
+            <a href="" class="nav-link">
+              <p>Postponed requests
                   </p></a>
           </li>
           <li class="nav-item">
@@ -129,32 +129,32 @@ if(isset($_SESSION['$username'])){
                   </p></a>
           </li>
           <li class="nav-item">
-            <a href="department.php" class="nav-link">
+            <a href="" class="nav-link">
               <p>Awarded contracts
                   </p></a>
           </li>
           <li class="nav-item">
-            <a href="department.php" class="nav-link">
+            <a href="" class="nav-link">
               <p>Applications
                   </p></a>
           </li>
           <li class="nav-item">
-            <a href="department.php" class="nav-link">
+            <a href="" class="nav-link">
               <p>Bidding
                   </p></a>
           </li>
           <li class="nav-item">
-            <a href="department.php" class="nav-link">
+            <a href="" class="nav-link">
               <p>Contracts management
                   </p></a>
           </li>
           <li class="nav-item">
-            <a href="department.php" class="nav-link">
+            <a href="" class="nav-link">
               <p>Recieved items
                   </p></a>
           </li>
           <li class="nav-item">
-            <a href="department.php" class="nav-link">
+            <a href="" class="nav-link">
               <p>History
                   </p></a>
           </li>         
@@ -172,7 +172,7 @@ if(isset($_SESSION['$username'])){
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Pendding requests</h1>
+            <h1 class="m-0 text-dark">Approved requests</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -254,7 +254,7 @@ if(isset($_SESSION['$username'])){
             </tbody>
         </table><br>
 
-        <button class="btn btn-light" onclick="tableToCSV()">Export to CSV</button> 
+        <button class="btn btn-primary" onclick="tableToCSV()">Export to CSV</button> 
               <div class="modal fade show" id="edit" aria-modal="true">
         <div class="modal-dialog modal-sm">
               <form role="form">
