@@ -2,17 +2,28 @@
       session_start();
       include("config.php");
       if(isset($_POST['superreg'])){
-        $email=$_POST['oname'];
-        $fname=$_POST['oimage'];
+        $oname=$_POST['oname'];
+        $oimage=$_POST['oimage'];
+        $fname=$_POST['fname'];
         $lname=$_POST['lname'];
-        $username=$_POST['fname'];
-        $tel=$_POST['lname'];
-        $password=$_POST['email'];
-        $password=$_POST['tel'];
+        $tel=$_POST['tel'];
+        $email=$_POST['email'];
+        $password=$_POST['password'];
+        $rppassword=$_POST['rppassword'];
         
-        $allowed=['png','jpg','jpeg']
+        $allowed=['png','jpg','jpeg'];
+        $fl_name= $_FILES['oimg']['name'];
+        $fl_extn=strtolower(end(explode('.', $fl_name)))
+        $fl_temp= $_FILES['oimg']['tmp_name'];
 
-        $sql = "INSERT INTO suppliers (`email`, `fname`,`lname`,`username`,`tel`,`pswd`) VALUES ('$email', '$fname','$lname','$username', '$tel', '$password')";
+        if in_array($fl_extn, $allowed){
+          echo 'ok';
+        }
+        else{
+          echo "The extension isnt allowed";
+        }
+
+        $sql = "INSERT INTO organizations (`oname`, `oimage`,`fname`,`lname`,`tel`,`email`,`pswd`,`rp`) VALUES ('$oname', '$oimage','$fname','$lname', '$tel', '$email','$password','$rppassword')";
 
         if (mysqli_query($db, $sql)) {
           echo "New user has been created successfully";
