@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2022 at 02:13 PM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 5.6.24
+-- Generation Time: Oct 01, 2022 at 02:30 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -55,6 +56,24 @@ INSERT INTO `applications` (`id`, `a_id`, `tender`, `name`, `adress`, `person`, 
 (1, 4, 'chairs', 'Muni', 'Arua', 'John', 'manager', 'nkwineinnocent5@gmail.com', '0785287421', 'y2mate.com - Ebibi byangye Yesu Akabyekorera HYMN 185 Runyankole Rukiga Church Of Uganda (2).mp3', 'y2mate.com - 250 IRA NKABA NINGIRA NTIRUNYANKORERUKIGA HYMNS.mp3', 'y2mate.com - Ira kunabaire ngwejegiire Hati Igura Runyankole Rukiga Hymn with New English Lyrics Song.mp3', '2022-09-21', '', ''),
 (1, 5, 'chairs', 'Muni', 'Arua', 'John', 'manager', 'nkwineinnocent5@gmail.com', '0785287421', 'y2mate.com - Ebibi byangye Yesu Akabyekorera HYMN 185 Runyankole Rukiga Church Of Uganda (2).mp3', 'y2mate.com - 250 IRA NKABA NINGIRA NTIRUNYANKORERUKIGA HYMNS.mp3', 'y2mate.com - Ira kunabaire ngwejegiire Hati Igura Runyankole Rukiga Hymn with New English Lyrics Song.mp3', '2022-09-21', '', ''),
 (1, 6, 'chairs', 'Muni', 'Arua', 'John', 'V.C', '1901200153@muni.ac.ug', '0785287422', 'NEGOTIATION STRATEGY AND PLANNING.pptx', 'TOPIC 2 (1).pptx', 'NATURE OF NEGOTIATION (1).pptx', '2022-09-21', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `organizations`
+--
+
+CREATE TABLE `organizations` (
+  `id` int(50) NOT NULL,
+  `oname` varchar(50) NOT NULL,
+  `oimage` varchar(50) NOT NULL,
+  `fname` varchar(50) NOT NULL,
+  `lname` varchar(50) NOT NULL,
+  `tel` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `pswd` varchar(50) NOT NULL,
+  `rp` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -207,6 +226,12 @@ ALTER TABLE `applications`
   ADD PRIMARY KEY (`a_id`);
 
 --
+-- Indexes for table `organizations`
+--
+ALTER TABLE `organizations`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `publish`
 --
 ALTER TABLE `publish`
@@ -233,21 +258,32 @@ ALTER TABLE `users`
 --
 ALTER TABLE `applications`
   MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `organizations`
+--
+ALTER TABLE `organizations`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `publish`
 --
 ALTER TABLE `publish`
   MODIFY `a_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `requests`
 --
 ALTER TABLE `requests`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
