@@ -3,7 +3,7 @@
       include("config.php");
       if(isset($_POST['superreg'])){
         $oname=$_POST['oname'];
-        $oimage=$_POST['oimage'];
+        $oimage=$_FILES['oimg'];
         $fname=$_POST['fname'];
         $lname=$_POST['lname'];
         $tel=$_POST['tel'];
@@ -11,31 +11,52 @@
         $password=$_POST['password'];
         $rppassword=$_POST['rppassword'];
         
-        $allowed=['png','jpg','jpeg'];
-        $fl_name= $_FILES['oimg']['name'];
-        $fl_extn=strtolower(end(explode('.', $fl_name)))
-        $fl_temp= $_FILES['oimg']['tmp_name'];
+        $allowed = array('png','jpg','jpeg');
+        $file_name= $_FILES['oimg']['name'];
+        $file_type= $_FILES['oimg']['type'];
+        $file_size= $_FILES['oimg']['size'];
+        $file_temp= $_FILES['oimg']['tmp_name'];  //temporary location
+        $file_error= $_FILES['oimg']['error'];
 
-        if in_array($fl_extn, $allowed){
-          echo 'ok';
+        $file_ext=explode('.', $file_name);
+        $fileActualExt=strtolower(end($file_ext));
+
+        if (in_array($fileActualExt, $allowed)){
+          if ($file_error=== 0) {
+            // code...
+            if ($file_size < 1000000){
+              $fileNameNew=uniqid('',true).".".$fileActualExt;  // uniqid gets us the time in microseconds
+              $fileDestination='files/'.$fileNameNew;
+              move_uploaded_file($file_temp, $fileDestination);
+              // header("Location:../login.php?uploadsuccess");
+              $sql = "INSERT INTO organizations (`oname`, `oimage`,`fname`,`lname`,`tel`,`email`,`pswd`,`rp`) VALUES ('$oname', '$fileNameNew','$fname','$lname', '$tel', '$email','$password','$rppassword')";
+
+              if (mysqli_query($db, $sql)) {
+                echo "Organization details added successfully";
+                echo "<script>window.location.href='../index.php';</script>";
+                //header('Location:managerhome.php');
+                //exit();
+              } 
+              else {
+                echo "Error: " . $sql . "<br>" . mysqli_error($db);
+              }
+
+
+            }
+            else{
+              echo "Your file is too big";
+            }
+          }
+          else{
+            echo "There was an Error uploading File";
+          }
         }
         else{
-          echo "The extension isnt allowed";
+          echo "You cannot upload files of this type";
         }
 
-        $sql = "INSERT INTO organizations (`oname`, `oimage`,`fname`,`lname`,`tel`,`email`,`pswd`,`rp`) VALUES ('$oname', '$oimage','$fname','$lname', '$tel', '$email','$password','$rppassword')";
-
-        if (mysqli_query($db, $sql)) {
-          echo "New user has been created successfully";
-          echo "<script>window.location.href='aftersign.html';</script>";
-          //header('Location:managerhome.php');
-          //exit();
-        } 
-        else {
-          echo "Error: " . $sql . "<br>" . mysqli_error($dbconn);
-        }
-
-        mysqli_close($conn);
+        
+        // mysqli_close($conn);
           
         //}
         
