@@ -120,7 +120,7 @@ if(isset($_SESSION['$username'])){
           </li>
           <li class="nav-item">
             <a href="department.php" class="nav-link">
-              <p>Postponed requests
+              <p>Postporned requests
                   </p></a>
           </li>
           <li class="nav-item">
@@ -240,7 +240,7 @@ if(isset($_SESSION['$username'])){
                     echo'<td>' .$e.'</td>';
                     echo'<td>' .$f.'</td>';
                     echo'<td>' .$g.'</td>';
-                    echo  '<td align="center" > <a  href="approve.php?id='.$a.'"  class="btn btn-primary btn-xs  "> Approve</a>  <a  href="\example\capston\project\look.php?id='.$a.'"  class="btn btn-primary btn-xs  "> Postpone</a></td>';
+                    echo  '<td align="center" > <a  href="\Procurement System\pages\approve.php?id='.$a.'"  class="btn btn-primary btn-xs  "> Approve</a>  <a  href="\example\capston\project\look.php?id='.$a.'"  class="btn btn-primary btn-xs  "> Postporn</a></td>';
                   echo '</tr>';
      
                 }

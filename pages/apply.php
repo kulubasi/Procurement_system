@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+  <title></title>
 </head>
 <body>
 <center>
@@ -46,9 +46,9 @@
     </head>
 
  <body class="hold-transition skin-blue fixed sidebar-mini">
- 	<?php 
-	$n = $_GET['id'];
-	include("config.php");
+  <?php 
+  $n = $_GET['id'];
+  include("config.php");
     $mydb ="SELECT * FROM   requests WHERE id ='".$n."' ";
     $run=mysqli_query($db,$mydb);
     if($run == true){
@@ -62,15 +62,15 @@
             $g =$row[7];
          }
      }           
-	 ?>
+   ?>
 
        <div style="margin-right: 150px; margin-left: 150px">
  
-		<form action="" method="post" enctype="multipart/form-data">
-			<div class="modal-content">
+    <form action="" method="post" enctype="multipart/form-data">
+      <div class="modal-content">
     <div class="modal-body">
-    	<ol class="breadcrumb float-sm-right">
-             <li class="breadcrumb-item"><a href="supplierpage.php">Home</a>><a href="lished.php">Publishedrequests</a>><a href="lished.php">Details</a>>Apply</li>
+      <ol class="breadcrumb float-sm-right">
+             <li class="breadcrumb-item"><a href="procurement_board.php">Home</a>><a href="lished.php">Publishedrequests</a>><a href="lished.php">Details</a>>Apply</li>
             </ol>
       <div class="card card-primary">
       <div class="card-header">
@@ -79,10 +79,10 @@
       </div>
         <div class="card-body">
         <div class="row">
-        	<div class="col-sm-6">
+          <div class="col-sm-6">
               <!-- text input -->
               <div class="form-group">
-              	<input type="number" name="id" hidden value="Supply of <?php echo$a; ?>" >
+                <input type="number" name="id" hidden value="Supply of <?php echo$a; ?>" >
                 <label>Tender</label>
                 <input type="text" name="tender" class="form-control" value="<?php echo $b; ?>" >
 
@@ -148,41 +148,41 @@
             
             </div>
 
-			---
-					
+      ---
+          
               <div class="row">
                
                 <?php 
-	              $n = $_GET['id'];
-	              include("config.php");
-	              $mydb ="SELECT * FROM   publish WHERE id ='".$n."' ";
-	              $run=mysqli_query($db,$mydb);
-	              if($run == true){
-	                  while($row=mysqli_fetch_array($run)){
-	                      $a =$row[0];
-	                      $b=$row[1];
-	                      $c  =$row[2];
-	                      $d =$row[3];
-	                      $e =$row[5];
-	                      $f =$row[4];
-	                      $h =$row[6];
-	                      $g =$row[7];
-	                      if($h !=''){
-	                      echo'<div class="col-sm-4">'.$e.
-	            '</div>'.'
-	            <div class="col-sm-4">
-	              <input type="file" name="doc1" class="form-control" placeholder="Enter...." >
-	            </div>
-	             <div class="col-sm-4">
-	              
-	            </div>
-	            
-	            </div>';
-	                    }
-	                   }
-	               }           
-	             ?>
-	             <br/>
+                $n = $_GET['id'];
+                include("config.php");
+                $mydb ="SELECT * FROM   publish WHERE id ='".$n."' ";
+                $run=mysqli_query($db,$mydb);
+                if($run == true){
+                    while($row=mysqli_fetch_array($run)){
+                        $a =$row[0];
+                        $b=$row[1];
+                        $c  =$row[2];
+                        $d =$row[3];
+                        $e =$row[5];
+                        $f =$row[4];
+                        $h =$row[6];
+                        $g =$row[7];
+                        if($h !=''){
+                        echo'<div class="col-sm-4">'.$e.
+              '</div>'.'
+              <div class="col-sm-4">
+                <input type="file" name="doc1" class="form-control" placeholder="Enter...." >
+              </div>
+               <div class="col-sm-4">
+                
+              </div>
+              
+              </div>';
+                      }
+                     }
+                 }           
+               ?>
+               <br/>
              <div class="row">
           <?php 
           $n = $_GET['id'];
@@ -255,47 +255,47 @@
                  <div class="col-sm-4">
                 <input name="dat"  class="form-control"  value="<?php echo date("Y-m-d")?>" >
              
-            	</div>
+              </div>
             </div>
         
       <div class="row">
-      	<div class="col-sm-4">
-            	</div>
-      	<div class="col-sm-4">    
+        <div class="col-sm-4">
+              </div>
+        <div class="col-sm-4">    
       <button type="submit" class="btn btn-primary" name="apply">Apply</button>
       </div>
       <div class="col-sm-4">
-            	</div>
+              </div>
     </div>
     </div>              
-	</form>
+  </form>
 </div>
         <?php
         include("config.php");
         if (isset($_POST["apply"])) {
-        	$id			= $_POST["id"];
-			$tender = $_POST["tender"];
-			$name			= $_POST["name"];
-			$adress			= $_POST["adress"];
-			$person		= $_POST["person"];
-			$title	= $_POST["title"];
-      		$email     = $_POST["email"];
-      		$contact     = $_POST["contact"];
+          $id     = $_POST["id"];
+      $tender = $_POST["tender"];
+      $name     = $_POST["name"];
+      $adress     = $_POST["adress"];
+      $person   = $_POST["person"];
+      $title  = $_POST["title"];
+          $email     = $_POST["email"];
+          $contact     = $_POST["contact"];
 
         
-          	$doc1name =$_FILES['doc1']['name'];
-          	$filetmpname  =$_FILES['doc1']['tmp_name'];
-          	$path    ="files/".$doc1name; 
-          	$doc2name =$_FILES['doc2']['name'];
-          	$filetmpname2  =$_FILES['doc2']['tmp_name'];
-          	$path2    ="files/".$doc2name; 
+            $doc1name =$_FILES['doc1']['name'];
+            $filetmpname  =$_FILES['doc1']['tmp_name'];
+            $path    ="files/".$doc1name; 
+            $doc2name =$_FILES['doc2']['name'];
+            $filetmpname2  =$_FILES['doc2']['tmp_name'];
+            $path2    ="files/".$doc2name; 
 
-          	$doc3name =$_FILES['doc3']['name'];
-          	$filetmpname3  =$_FILES['doc3']['tmp_name'];
-          	$path3    ="files/".$doc3name; 
-          	$dat    =$_POST["dat"];
+            $doc3name =$_FILES['doc3']['name'];
+            $filetmpname3  =$_FILES['doc3']['tmp_name'];
+            $path3    ="files/".$doc3name; 
+            $dat    =$_POST["dat"];
 
-            $sql = "INSERT INTO applications(id,tender,name,adress,person,title,email,contact,doc1,doc2,doc3,dat	
+            $sql = "INSERT INTO applications(id,tender,name,adress,person,title,email,contact,doc1,doc2,doc3,dat  
 )VALUES('".$id."','".$tender."','".$name."','".$adress."','".$person."','".$title."','".$email."','".$contact."','".$doc1name."','".$doc2name."','".$doc3name."','".$dat."')";
             $run=mysqli_query($db,$sql);
             if ($run==true) {
@@ -314,7 +314,7 @@
         
         ?>
        
-            
+        <p>this is an updated file</p>    
     </body>
       <script type="text/javascript" src="/example/eris1/plugins/jQuery/jQuery-2.1.4.min.js"> </script>
       <script type="text/javascript" src="/example/eris1/bootstrap/js/bootstrap.min.js" ></script>

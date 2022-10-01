@@ -92,7 +92,7 @@ if(isset($_SESSION['$username'])){
           <img src="../dist/img/FaceApp_1643357366584_1.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Nkwine Innocent</a>
+           <a href="#" class="d-block"><?php $a =$_SESSION['$name']; echo $a; ?></a>
         </div>
       </div>
 
@@ -342,12 +342,13 @@ if(isset($_SESSION['$username'])){
               <div class="inner">
                 <h3><i class="fa fa-palette"></i> 65</h3>
 
-                <p>Items under delivery</p>
+                <p>Items under delivery </p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+
             </div>
           </div>
           <!-- ./col -->
@@ -359,7 +360,7 @@ if(isset($_SESSION['$username'])){
     </section>
     <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
+
   <footer class="main-footer">
     <strong>Footer<a href="http://adminlte.io"></a>.</strong>
     
