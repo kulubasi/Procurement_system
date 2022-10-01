@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2022 at 12:59 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.0.19
+-- Generation Time: Oct 01, 2022 at 02:13 PM
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -113,6 +112,28 @@ INSERT INTO `requests` (`id`, `item`, `qty`, `purpose`, `requestor`, `dat`, `pro
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `suppliers`
+--
+
+CREATE TABLE `suppliers` (
+  `email` varchar(60) NOT NULL,
+  `fname` varchar(60) NOT NULL,
+  `lname` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `tel` varchar(50) NOT NULL,
+  `pswd` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `suppliers`
+--
+
+INSERT INTO `suppliers` (`email`, `fname`, `lname`, `username`, `tel`, `pswd`) VALUES
+('tikol@yahoo.com', 'tiko', 'lucy', 'lucyt', '0787009988', 'lucyt22');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tr`
 --
 
@@ -212,26 +233,21 @@ ALTER TABLE `users`
 --
 ALTER TABLE `applications`
   MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
 -- AUTO_INCREMENT for table `publish`
 --
 ALTER TABLE `publish`
   MODIFY `a_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `requests`
 --
 ALTER TABLE `requests`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
