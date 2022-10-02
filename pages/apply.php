@@ -224,7 +224,7 @@ if(isset($_SESSION['$username'])){
              <div class="row">
           <?php 
           $n = $_GET['id'];
-          $f =$_GET['bid'];
+          // $f =$_GET['bid'];
           include("config.php");
           $mydb ="SELECT * FROM   publish WHERE id ='".$n."' ";
           $run=mysqli_query($db,$mydb);
@@ -310,7 +310,7 @@ if(isset($_SESSION['$username'])){
               move_uploaded_file($filetmpname, $path );
               move_uploaded_file($filetmpname2, $path2 );
               move_uploaded_file($filetmpname3, $path3 );
-              echo '<script type="text/javascript">alert("You have succefully submited your application");window.location=\'display.php\';</script>';
+              echo '<script type="text/javascript">alert("You have succefully submited your application");window.location=\'supplierpage.php\';</script>';
               }else{
                 echo "ERROR: Hush! sorry there was error try again." . mysqli_error($db);
               }

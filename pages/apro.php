@@ -102,7 +102,7 @@ if(isset($_SESSION['$username'])){
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
            <li class="nav-item ">
-            <a href="dashboard.php" class="nav-link">
+            <a href="departmentpage.php" class="nav-link">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Home
@@ -122,11 +122,11 @@ if(isset($_SESSION['$username'])){
               <i class="nav-icon fas fa-building"></i><p>Department details
                   </p></a>
           </li>
-          <li class="nav-item has-treeview">
+          <!-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link"><i class="nav-icon fas fa-clone"></i><p>Profile</p></a>
     
-          </li>
-          <li class="nav-item has-treeview">
+          </li> -->
+          <!-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-palette"></i>
               <p>
@@ -134,7 +134,7 @@ if(isset($_SESSION['$username'])){
                 </i>
               </p>
             </a>
-          </li>
+          </li> -->
           <li class="nav-item has-treeview">
             <a href="re.php" class="nav-link ">
               <i class="nav-icon fas fa-shopping-cart"></i>

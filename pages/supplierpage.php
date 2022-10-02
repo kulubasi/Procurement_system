@@ -94,7 +94,7 @@ if(isset($_SESSION['$username'])){
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="../dist/img/FaceApp_1643357366584_1.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="../dist/img/FaceApp_164335736658_1.jpg" class="img-circle elevation-2 text-white" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">Supplier</a>
@@ -161,7 +161,7 @@ if(isset($_SESSION['$username'])){
             <a href="#" class="nav-link ">
               <i class="fas fa-inventory"></i>
               <p>
-                Recieved items
+                
               </p>
             </a>
           </li>
@@ -190,7 +190,7 @@ if(isset($_SESSION['$username'])){
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Dash board  </h3> <button class="btn btn-success btn-sm" style="margin-left:1%" data-toggle="moddal" data-target="#add"><i class="fa fa-plus">Apply for bid</i></button> 
+              <h3 class="card-title">Dash board  </h3> 
               <div class="modal fade show" id="add" aria-modal="true">
         <div class="modal-dialog modal-md">
               <form method="post" action="requ.php ">
@@ -299,13 +299,13 @@ if(isset($_SESSION['$username'])){
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <div class="col-lg-3 col-6">
+          <div class="col-lg-3 col-6 avbidstwigger" id="avbidstwigger">
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
                 <h3><i class="fa fa-users"></i> 0</h3>
 
-                <p>Open bids</p>
+                <p>Available bids</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
@@ -329,8 +329,8 @@ if(isset($_SESSION['$username'])){
             </div>
           </div>
           <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
+          <!-- <div class="col-lg-3 col-6">
+            small box
             <div class="small-box bg-warning">
               <div class="inner">
                 <h3><i class="fa fa-cart-plus"></i>0</h3>
@@ -342,7 +342,7 @@ if(isset($_SESSION['$username'])){
               </div>
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-          </div>
+          </div> -->
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
@@ -488,9 +488,17 @@ if(isset($_SESSION['$username'])){
   let availablebidstwigger = document.getElementById('availablebidstwigger');
   let availablebids = document.getElementById('availablebids');
   let supphome = document.getElementById('supphome');
+  let avbidstwigger = document.getElementById('avbidstwigger');
   
 
   availablebidstwigger.addEventListener('click',(e)=>{
+    e.preventDefault();
+    availablebids.classList.add('active')
+    supphome.classList.add('active')
+    // document.body.classList.add('overflow')
+  })
+
+  avbidstwigger.addEventListener('click',(e)=>{
     e.preventDefault();
     availablebids.classList.add('active')
     supphome.classList.add('active')

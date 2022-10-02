@@ -257,3 +257,5 @@ main{
 
 .availablebids{display: none;}
 .availablebids.active{display: block;}
+
+/*.avbids.active{display: none;}*/

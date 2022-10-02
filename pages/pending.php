@@ -172,11 +172,11 @@ if(isset($_SESSION['$username'])){
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Pendding requests</h1>
+            <h1 class="m-0 text-dark">Pending requests</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a>>Pendding requests</li>
+              <li class="breadcrumb-item"><a href="#">Home</a>>Pending requests</li>
             </ol>
             
           </div><!-- /.col -->
@@ -240,7 +240,7 @@ if(isset($_SESSION['$username'])){
                     echo'<td>' .$e.'</td>';
                     echo'<td>' .$f.'</td>';
                     echo'<td>' .$g.'</td>';
-                    echo  '<td align="center" > <a  href="\Procurement System\pages\approve.php?id='.$a.'"  class="btn btn-primary btn-xs  "> Approve</a>  <a  href="\example\capston\project\look.php?id='.$a.'"  class="btn btn-primary btn-xs  "> Postporn</a></td>';
+                    echo  '<td align="center" > <a  href="\Procurement_system\pages\approve.php?id='.$a.'"  class="btn btn-primary btn-xs  "> Approve</a>  <a  href="?id='.$a.'"  class="btn btn-primary btn-xs  "> Postpone</a></td>';
                   echo '</tr>';
      
                 }

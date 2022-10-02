@@ -122,11 +122,11 @@ if(isset($_SESSION['$username'])){
               <i class="nav-icon fas fa-building"></i><p>Department details
                   </p></a>
           </li>
-          <li class="nav-item has-treeview">
+          <!-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link"><i class="nav-icon fas fa-clone"></i><p>Profile</p></a>
     
-          </li>
-          <li class="nav-item has-treeview">
+          </li> -->
+          <!-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-palette"></i>
               <p>
@@ -134,7 +134,7 @@ if(isset($_SESSION['$username'])){
                 </i>
               </p>
             </a>
-          </li>
+          </li> -->
           <li class="nav-item has-treeview">
             <a href="re.php" class="nav-link">
               <i class="nav-icon fas fa-shopping-cart"></i>
@@ -295,7 +295,7 @@ if(isset($_SESSION['$username'])){
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3><i class="fa fa-users"></i> 150</h3>
+                <h3><i class="fa fa-users"></i> 0</h3>
 
                 <p>Requested items</p>
               </div>
@@ -310,7 +310,7 @@ if(isset($_SESSION['$username'])){
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3><i class="fa fa-shopping-cart"></i>53</h3>
+                <h3><i class="fa fa-shopping-cart"></i>0</h3>
 
                 <p>Approved requests</p>
               </div>
@@ -325,7 +325,7 @@ if(isset($_SESSION['$username'])){
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3><i class="fa fa-cart-plus"></i>44</h3>
+                <h3><i class="fa fa-cart-plus"></i></h3>
 
                 <p>Recieved items</p>
               </div>
@@ -340,7 +340,7 @@ if(isset($_SESSION['$username'])){
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3><i class="fa fa-palette"></i> 65</h3>
+                <h3><i class="fa fa-palette"></i> .</h3>
 
                 <p>Items under delivery </p>
               </div>

@@ -41,7 +41,7 @@ if(isset($_SESSION['$username'])){
  
 <div style="margin-right: 100px; margin-left: 100px">
   
-  <form role="form" method="post" action="publish.php">
+  <form role="form" method="post" action="">
   <div class="modal-content">
     <div class="modal-body">
     	<ol class="breadcrumb float-sm-right">
@@ -52,12 +52,13 @@ if(isset($_SESSION['$username'])){
 
         <h3 class="card-title" align="center">Applications</h3>
       </div>
+      <br><br>
       <div class="row">
         <div class="col-sm-1">
           </div>
           <div class="col-sm-6">
             <?php
-            echo $_SESSION['$username'];
+            // echo $_SESSION['$username'];
   $a = $_GET['bid'];
   $c = $_GET['id'];
   include("config.php");
@@ -97,7 +98,7 @@ if(isset($_SESSION['$username'])){
             echo$i; 
             echo'<h4>'."Other requirements".'</h4>';
             echo$j;
-            echo'<h4>'."Deadline for pender apllication".'</h4>';
+            echo'<h4>'."Deadline for tender application".'</h4>';
             echo$y;
             
 

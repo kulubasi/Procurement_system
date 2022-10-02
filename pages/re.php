@@ -122,11 +122,11 @@ if(isset($_SESSION['$username'])){
               <i class="nav-icon fas fa-building"></i><p>Department details
                   </p></a>
           </li>
-          <li class="nav-item has-treeview">
+          <!-- <li class="nav-item has-treeview">
             <a href="proplan.php" class="nav-link"><i class="nav-icon fas fa-clone"></i><p>Profile</p></a>
     
-          </li>
-          <li class="nav-item has-treeview">
+          </li> -->
+          <!-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-palette"></i>
               <p>
@@ -134,7 +134,7 @@ if(isset($_SESSION['$username'])){
                 </i>
               </p>
             </a>
-          </li>
+          </li> -->
           <li class="nav-item has-treeview">
             <a href="re.php" class="nav-link active">
               <i class="nav-icon fas fa-shopping-cart"></i>
@@ -224,7 +224,7 @@ if(isset($_SESSION['$username'])){
               <th>Requested on</th>
               <th>Requested by</th>
               <th>Status</th>
-              <th>Action</th>
+              <!-- <th>Action</th> -->
             </tr> 
           </thead> 
           <tbody>
@@ -253,7 +253,7 @@ if(isset($_SESSION['$username'])){
                     echo'<td>' .$e.'</td>';
                     echo'<td>' .$f.'</td>';
                     echo'<td>' .$g.'</td>';
-                    echo  '<td align="center" > <a title="Edit" href="\Procurement System\pages\approve.php?id='.$a.'" < class="btn btn-primary btn-xs  "> <i class="fa fa-edit"></i></a>  <a title="Delet" href="\example\capston\project\look.php?id='.$a.'"  class="btn btn-danger btn-xs  "><i class="fa fa-trash"></i></a></td>';
+                    // echo  '<td align="center" > <a title="Edit" href="\Procurement System\pages\approve.php?id='.$a.'" < class="btn btn-primary btn-xs  "> <i class="fa fa-edit"></i></a>  <a title="Delete" href="\Procurement_system\pages\approve.php?id='.$a.'"  class="btn btn-danger btn-xs  "><i class="fa fa-trash"></i></a></td>';
                   echo '</tr>';
      
                 }
