@@ -57,6 +57,7 @@
           <i class="fa fa-unlock"></i> Sign in
         </button><br>
         <p>Dont have an account <a href="pages/signup.php">Signup</a></p>
+        <p>For Organizations <a href="pages/superreg.php">Register here</a></p>
       
       </div>
 

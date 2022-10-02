@@ -251,3 +251,9 @@ main{
     font-weight: bold;
     color: burlywood;
 }
+
+.supphome{display: block;}
+.supphome.active{display: none;}
+
+.availablebids{display: none;}
+.availablebids.active{display: block;}

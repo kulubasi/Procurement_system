@@ -35,7 +35,12 @@ if(isset($_SESSION['$username'])){
   <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- my css -->
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/style.css">
 </head>
+
+
+
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
@@ -118,7 +123,7 @@ if(isset($_SESSION['$username'])){
             </a>
           </li>
           <li class="nav-item has-treeview ">
-            <a href="display.php" class="nav-link">
+            <a href="" class="nav-link" id="availablebidstwigger">
               <i class="nav-icon fas fa-building"></i><p>Available bids
                   </p></a>
           </li>
@@ -287,7 +292,10 @@ if(isset($_SESSION['$username'])){
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <section class="content">
+
+
+
+    <section class="content supphome" id="supphome">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
@@ -357,9 +365,58 @@ if(isset($_SESSION['$username'])){
         
       </div><!-- /.container-fluid -->
     </section>
+
+
+    <!-- section twiggered by open bids -->
+    <section id="availablebids" class="availablebids">
+      <div class="container">
+
+        <!-- Small boxes (Stat box) -->
+    
+            <?php
+            //$user  =$_SESSION['$username_j'];
+            include("config.php");
+            $mydb ="SELECT * FROM publish ";
+            $run=mysqli_query($db,$mydb);
+            if($run == true){
+              $n =0;
+              
+                while($row=mysqli_fetch_array($run)){
+                    $a =$row[0];
+                    $y=$row[1]; 
+                    $b=$row[2];
+                    $c  =$row[3];
+                    $d =$row[4];
+                    $e =$row[10];
+                    $f =$row[5];
+                    $g =$row[8];  
+                    $n+=1;                  
+                  echo $n.'.'.' '. $c. $b.' ere/is needed before '.$e. ' <a title="View details"   href="details1.php?id='.$a.'&bid='.$y.'"  class="btn btn-primary btn-xm  ">  <i class="fa fa-eye"></i></a>'.'<br/>'.'<br/>';
+     
+                }
+         
+            }else{
+            echo "<h3 >There are no pedding requests</h3>". mysqli_error($db);
+            }
+                  
+            ?>
+            <!-- small box -->
+      
+        <!-- /.row -->
+        <!-- Main row -->
+        
+    
+  
+    </section>
+    <!-- end of section twiggerd by open bids -->
+
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
+
+
+
   <footer class="main-footer">
     <strong>Footer<a href="http://adminlte.io"></a>.</strong>
     
@@ -426,6 +483,19 @@ if(isset($_SESSION['$username'])){
       "autoWidth": false,
     });
   });
+</script>
+<script type="text/javascript">
+  let availablebidstwigger = document.getElementById('availablebidstwigger');
+  let availablebids = document.getElementById('availablebids');
+  let supphome = document.getElementById('supphome');
+  
+
+  availablebidstwigger.addEventListener('click',(e)=>{
+    e.preventDefault();
+    availablebids.classList.add('active')
+    supphome.classList.add('active')
+    // document.body.classList.add('overflow')
+  })
 </script>
 </body>
 </html>

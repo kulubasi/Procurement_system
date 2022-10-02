@@ -76,7 +76,7 @@ if(isset($_SESSION['$username'])){
       <div class="modal-content">
     <div class="modal-body">
       <ol class="breadcrumb float-sm-right">
-             <li class="breadcrumb-item"><a href="procurement_board.php">Home</a>><a href="lished.php">Publishedrequests</a>><a href="lished.php">Details</a>>Apply</li>
+             <li class="breadcrumb-item"><a href="supplierpage.php">Home</a>><a href="lished.php">Publishedrequests</a>><a href="lished.php">Details</a>>Apply</li>
             </ol>
       <div class="card card-primary">
       <div class="card-header">
@@ -301,7 +301,7 @@ if(isset($_SESSION['$username'])){
             $filetmpname3  =$_FILES['doc3']['tmp_name'];
             $path3    ="files/".$doc3name; 
             $dat    =$_POST["dat"];
-            $a =$_SESSION['$username']
+            $a =$_SESSION['$username'];
             $sql = "INSERT INTO applications(id,tender,name,adress,person,title,email,contact,doc1,doc2,doc3,dat,user  
 )VALUES('".$id."','".$tender."','".$name."','".$adress."','".$person."','".$title."','".$email."','".$contact."','".$doc1name."','".$doc2name."','".$doc3name."','".$dat."','".$a."')";
             $run=mysqli_query($db,$sql);
