@@ -152,6 +152,7 @@ if(isset($_SESSION['$username'])){
              echo'<h4>'."Document 1".'<a title="download"   href="download1.php?id='.$b.'"  >  <i class="fas fa-download"></i></a>'.'</h4>';
              echo'<h4>'."Document 1".'<a title="download"   href="download2.php?id='.$b.'"   ">  <i class="fas fa-download"></i></a>'.'</h4>';
             echo'<br/>';
+           echo '<a  href="rating.php?sup='.$d.'&ten='.$c.'"  class="btn btn-primary btn-xs  "> Rate</a>' ; 
 
          }
      }           
