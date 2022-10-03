@@ -134,7 +134,7 @@ if(isset($_SESSION['$username'])){
                   </p></a>
           </li>
           <li class="nav-item">
-            <a href="department.php" class="nav-link">
+            <a href="applications.php" class="nav-link">
               <p>Applications
                   </p></a>
           </li>
