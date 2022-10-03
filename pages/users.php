@@ -190,39 +190,39 @@ if(isset($_SESSION['$username'])){
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">First name</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Department Initial" name="fname">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Department Initial" name="fname" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Last name</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Department Initial" name="lname">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Department Initial" name="lname" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Department</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Department Initial" name="pat">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Department Initial" name="pat" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Position</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Department Initial" name="position">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Department Initial" name="position" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Email</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Department Initial" name="email">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Department Initial" name="email" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Contact</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Department Initial" name="contact">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Department Initial" name="contact" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Username</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Department Initial" name="username">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Department Initial" name="username" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Password</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Department Initial" name="password">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Department Initial" name="password" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Code</label>
-                    <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter Department Initial" name="cod">
+                    <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter Department Initial" name="cod" required>
                   </div>
                 
                 </div>
@@ -253,7 +253,7 @@ if(isset($_SESSION['$username'])){
               <th>Username</th>
               <!-- <th>password</th> -->
               <th>Code</th>
-              <th>Action</th>
+              <!-- <th>Action</th> -->
             </tr> 
           </thead> 
           <tbody>
@@ -290,7 +290,7 @@ if(isset($_SESSION['$username'])){
                     echo'<td>' .$j.'</td>';
                     
                     
-                                        echo  '<td align="center" > <a  href="\Procurement System\pages\approve.php?id='.$a.'"  class="btn btn-primary btn-xs  "> Edit</a>  <a  href="\example\capston\project\look.php?id='.$a.'"  class="btn btn-danger btn-xs  "> delet</a></td>';
+                                        // echo  '<td align="center" > <a  href="\Procurement_system\pages\approve.php?id='.$a.'"  class="btn btn-primary btn-xs  "> Edit</a>  <a  href="\example\capston\project\look.php?id='.$a.'"  class="btn btn-danger btn-xs  "> delet</a></td>';
                   echo '</tr>';
      
                 }
