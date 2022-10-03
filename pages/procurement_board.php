@@ -118,11 +118,11 @@ if(isset($_SESSION['$username'])){
               <p>Approved requests
                   </p></a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <p>Postporned requests
                   </p></a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a href="lished.php" class="nav-link">
               <p>Published contracts
@@ -148,16 +148,16 @@ if(isset($_SESSION['$username'])){
               <p>Contracts management
                   </p></a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <p>Recieved items
                   </p></a>
-          </li>
-          <li class="nav-item">
+          </li> -->
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <p>History
                   </p></a>
-          </li>         
+          </li> -->         
                   </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -192,14 +192,14 @@ if(isset($_SESSION['$username'])){
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3><i class="fa fa-users"></i> 150</h3>
+                <h3><i class="fa fa-users"></i> </h3>
 
-                <p>Total Users</p>
+                <p>Pending Requests</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="pending.php" class="small-box-footer">Check out <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -207,14 +207,14 @@ if(isset($_SESSION['$username'])){
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3><i class="fa fa-shopping-cart"></i>53</h3>
+                <h3><i class="fa fa-shopping-cart"></i></h3>
 
-                <p>Total PO</p>
+                <p>Approved Requests</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="approved.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -222,14 +222,14 @@ if(isset($_SESSION['$username'])){
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3><i class="fa fa-cart-plus"></i>44</h3>
+                <h3><i class="fa fa-cart-plus"></i></h3>
 
-                <p>Total PR</p>
+                <p>Published Contracts</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="lished.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -237,14 +237,14 @@ if(isset($_SESSION['$username'])){
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3><i class="fa fa-palette"></i> 65</h3>
+                <h3><i class="fa fa-palette"></i></h3>
 
-                <p>Total Items</p>
+                <p>Supplier Applications</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <?php echo $_SESSION['$name'] ;  ?> <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="applications.php" class="small-box-footer">More info <?php echo $_SESSION['$username'] ;  ?> <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->

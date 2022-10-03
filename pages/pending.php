@@ -118,18 +118,18 @@ if(isset($_SESSION['$username'])){
               <p>Approved requests
                   </p></a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="department.php" class="nav-link">
               <p>Postporned requests
                   </p></a>
-          </li>
+          </li> -->
           <li class="nav-item">
-            <a href="department.php" class="nav-link">
+            <a href="lished.php" class="nav-link">
               <p>Published contracts
                   </p></a>
           </li>
           <li class="nav-item">
-            <a href="department.php" class="nav-link">
+            <a href="" class="nav-link">
               <p>Awarded contracts
                   </p></a>
           </li>
@@ -172,11 +172,11 @@ if(isset($_SESSION['$username'])){
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Pendding requests</h1>
+            <h1 class="m-0 text-dark">Pending requests</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a>>Pendding requests</li>
+              <li class="breadcrumb-item"><a href="#">Home</a>>Pending requests</li>
             </ol>
             
           </div><!-- /.col -->
@@ -240,7 +240,7 @@ if(isset($_SESSION['$username'])){
                     echo'<td>' .$e.'</td>';
                     echo'<td>' .$f.'</td>';
                     echo'<td>' .$g.'</td>';
-                    echo  '<td align="center" > <a  href="\Procurement System\pages\approve.php?id='.$a.'"  class="btn btn-primary btn-xs  "> Approve</a>  <a  href="\example\capston\project\look.php?id='.$a.'"  class="btn btn-primary btn-xs  "> Postporn</a></td>';
+                    echo  '<td align="center" > <a  href="\Procurement_system\pages\approve.php?id='.$a.'"  class="btn btn-primary btn-xs  "> Approve</a>  <a  href="?id='.$a.'"  class="btn btn-primary btn-xs  "> Postpone</a></td>';
                   echo '</tr>';
      
                 }
@@ -252,7 +252,9 @@ if(isset($_SESSION['$username'])){
             ?>
               
             </tbody>
-        </table> 
+        </table><br>
+        <button class="btn btn-primary" onclick="tableToCSV()">Export to CSV</button> 
+
               <div class="modal fade show" id="edit" aria-modal="true">
         <div class="modal-dialog modal-sm">
               <form role="form">
@@ -353,5 +355,66 @@ if(isset($_SESSION['$username'])){
 <script src="../dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
++<script type="text/javascript">
+        function tableToCSV() {
+ 
+            // Variable to store the final csv data
+            var csv_data = [];
+ 
+            // Get each row data
+            var rows = document.getElementsByTagName('tr');
+            for (var i = 0; i < rows.length; i++) {
+ 
+                // Get each column data
+                var cols = rows[i].querySelectorAll('td,th');
+ 
+                // Stores each csv row data
+                var csvrow = [];
+                for (var j = 0; j < cols.length; j++) {
+ 
+                    // Get the text data of each cell
+                    // of a row and push it to csvrow
+                    csvrow.push(cols[j].innerHTML);
+                }
+ 
+                // Combine each column value with comma
+                csv_data.push(csvrow.join(","));
+            }
+ 
+            // Combine each row data with new line character
+            csv_data = csv_data.join('\n');
+ 
+            // Call this function to download csv file 
+            downloadCSVFile(csv_data);
+ 
+        }
+ 
+        function downloadCSVFile(csv_data) {
+ 
+            // Create CSV file object and feed
+            // our csv_data into it
+            CSVFile = new Blob([csv_data], {
+                type: "text/csv"
+            });
+ 
+            // Create to temporary link to initiate
+            // download process
+            var temp_link = document.createElement('a');
+ 
+            // Download csv file
+            temp_link.download = "GfG.csv";
+            var url = window.URL.createObjectURL(CSVFile);
+            temp_link.href = url;
+ 
+            // This link should not be displayed
+            temp_link.style.display = "none";
+            document.body.appendChild(temp_link);
+ 
+            // Automatically click the link to
+            // trigger download
+            temp_link.click();
+            document.body.removeChild(temp_link);
+        }
+    </script>
 </body>
 </html>
