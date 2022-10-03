@@ -89,10 +89,10 @@ if(isset($_SESSION['$username'])){
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="../dist/img/FaceApp_1643357366584_1.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="../dist/img/FaceApp_164335736584_1.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Nkwine Innocent</a>
+          <a href="#" class="d-block"></a>
         </div>
       </div>
 

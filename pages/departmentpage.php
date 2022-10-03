@@ -89,10 +89,10 @@ if(isset($_SESSION['$username'])){
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="../dist/img/FaceApp_1643357366584_1.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="../dist/img/FaceApp_164357366584_1.jpg" class="img-circle elevation-2 text-white" alt="User Image">
         </div>
         <div class="info">
-           <a href="#" class="d-block"><?php $a =$_SESSION['$name']; echo $a; ?></a>
+           <a href="#" class="d-block"><?php $a =$_SESSION['$username']; echo $a; ?></a>
         </div>
       </div>
 
@@ -109,14 +109,14 @@ if(isset($_SESSION['$username'])){
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview ">
+          <!-- <li class="nav-item has-treeview ">
             <a href="unit.php" class="nav-link ">
               <i class="fa fa-massega"></i>
               <p>
-                Message
+               
               </p>
             </a>
-          </li>
+          </li> -->
           <li class="nav-item has-treeview ">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-building"></i><p>Department details
@@ -154,9 +154,9 @@ if(isset($_SESSION['$username'])){
           </li>
           <li class="nav-item has-treeview ">
             <a href="#" class="nav-link ">
-              <i class="fas fa-inventory"></i>
+              <i class="fas fa-warehouse"></i>
               <p>
-                Recieved items
+                 Recieved items
               </p>
             </a>
           </li>
@@ -291,7 +291,7 @@ if(isset($_SESSION['$username'])){
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <div class="col-lg-3 col-6">
+          <div class="col-lg-4 col-6">
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
@@ -302,11 +302,11 @@ if(isset($_SESSION['$username'])){
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="re.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
-          <div class="col-lg-3 col-6">
+          <div class="col-lg-4 col-6">
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
@@ -321,7 +321,7 @@ if(isset($_SESSION['$username'])){
             </div>
           </div>
           <!-- ./col -->
-          <div class="col-lg-3 col-6">
+          <div class="col-lg-4 col-6">
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
@@ -336,8 +336,8 @@ if(isset($_SESSION['$username'])){
             </div>
           </div>
           <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
+          <!-- <div class="col-lg-3 col-6">
+            small box
             <div class="small-box bg-danger">
               <div class="inner">
                 <h3><i class="fa fa-palette"></i> .</h3>
@@ -350,7 +350,7 @@ if(isset($_SESSION['$username'])){
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 
             </div>
-          </div>
+          </div> -->
           <!-- ./col -->
         </div>
         <!-- /.row -->

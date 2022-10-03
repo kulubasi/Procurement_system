@@ -113,16 +113,16 @@ if(isset($_SESSION['$username'])){
               <p>Pending requests
                   </p></a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a href="approved.php" class="nav-link active">
               <p>Approved requests
                   </p></a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="department.php" class="nav-link">
-              <p>Postporned requests
+              <p>Postponed requests
                   </p></a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a href="lished.php" class="nav-link">
               <p>Published contracts
@@ -172,7 +172,7 @@ if(isset($_SESSION['$username'])){
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Pendding requests</h1>
+            <h1 class="m-0 text-dark">Approved requests</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">

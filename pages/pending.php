@@ -118,18 +118,18 @@ if(isset($_SESSION['$username'])){
               <p>Approved requests
                   </p></a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="department.php" class="nav-link">
               <p>Postporned requests
                   </p></a>
-          </li>
+          </li> -->
           <li class="nav-item">
-            <a href="department.php" class="nav-link">
+            <a href="lished.php" class="nav-link">
               <p>Published contracts
                   </p></a>
           </li>
           <li class="nav-item">
-            <a href="department.php" class="nav-link">
+            <a href="" class="nav-link">
               <p>Awarded contracts
                   </p></a>
           </li>
