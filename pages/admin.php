@@ -89,10 +89,10 @@ if(isset($_SESSION['$username'])){
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="../dist/img/FaceApp_1643357366584_1.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="../dist/im/FaceApp_1643357366584_1.jpg" class="img-circle elevation-2 text-white" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Nkwine Innocent</a>
+          <a href="#" class="d-block"><?php $a =$_SESSION['$username']; echo $a; ?></a>
         </div>
       </div>
 
@@ -193,43 +193,43 @@ if(isset($_SESSION['$username'])){
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <div class="col-lg-3 col-6">
+          <div class="col-lg-4 col-6">
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3><i class="fa fa-users"></i> 150</h3>
+                <h3><i class="fa fa-users"></i> </h3>
 
                 <p>Department</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
-          <div class="col-lg-3 col-6">
+          <div class="col-lg-4 col-6">
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3><i class="fa fa-shopping-cart"></i>53</h3>
+                <h3><i class="fa fa-shopping-cart"></i></h3>
 
                 <p>Users</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="users.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
-          <div class="col-lg-3 col-6">
+          <div class="col-lg-4 col-6">
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3><i class="fa fa-cart-plus"></i>44</h3>
+                <h3><i class="fa fa-cart-plus"></i></h3>
 
-                <p>Massages</p>
+                <p>Messages</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -238,11 +238,11 @@ if(isset($_SESSION['$username'])){
             </div>
           </div>
           <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
+          <!-- <div class="col-lg-3 col-6">
+            small box
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3><i class="fa fa-palette"></i> 65</h3>
+                <h3><i class="fa fa-palette"></i> </h3>
 
                 <p>Items under delivery</p>
               </div>
@@ -251,7 +251,7 @@ if(isset($_SESSION['$username'])){
               </div>
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-          </div>
+          </div> -->
           <!-- ./col -->
         </div>
         <!-- /.row -->
