@@ -153,11 +153,11 @@ if(isset($_SESSION['$username'])){
               <p>Recieved items
                   </p></a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="" class="nav-link">
               <p>History
                   </p></a>
-          </li>         
+          </li> -->         
                   </ul>
       </nav>
       <!-- /.sidebar-menu -->
