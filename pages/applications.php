@@ -139,7 +139,7 @@ if(isset($_SESSION['$username'])){
                   </p></a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="bidding.php" class="nav-link">
               <p>Bidding
                   </p></a>
           </li>

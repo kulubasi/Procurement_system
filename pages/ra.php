@@ -89,6 +89,7 @@ if(isset($_SESSION['$username'])){
                     $g =$row[7];
                     $h =$row[9];
                     $i =$row[8];
+                    $z =$_GET['pro'];
                     $p=($d+$e+$f)/3;
                     $n+=1;
                       echo '<tr>';
@@ -103,7 +104,7 @@ if(isset($_SESSION['$username'])){
                     echo'<td>' .$h.'</td>';
                     echo'<td>' .$i.'</td>';
                     echo'<td>' .$p.'</td>';
-                    echo  '<td align="center" > <a  href="#?pro='.$b.'&app='.$c.'"  class="btn btn-primary btn-xs  "> Award contract</a></td>';
+                    echo  '<td align="center" > <a  href="award.php?ap='.$a.'&td='.$z.'"  class="btn btn-primary btn-xs  "> Award contract</a></td>';
                   echo '</tr>';
      
                 }

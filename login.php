@@ -14,13 +14,13 @@ require_once("config.php");
 		}
 		else{
 			$sql = "SELECT *FROM users WHERE username='".$username."' AND password ='".$password."' ";
-			$suppsql = "SELECT *FROM suppliers WHERE username='".$username."' AND pswd ='".$password."' ";
+			
 			$con = mysqli_query($db,$sql);
-			$suppcon = mysqli_query($db,$suppsql);
+			
 			$rows = mysqli_num_rows($con);
-			$supprows = mysqli_num_rows($suppcon);
+			
             $records = mysqli_fetch_array($con);
-            $supprecords = mysqli_fetch_array($suppcon);
+            
 			if($rows==0){
 				echo '<script type="text/javascript">alert("Wrong UserName or Password");window.location=\'index.php\';</script>';
     		}
@@ -66,3 +66,6 @@ require_once("config.php");
 		
 
 	}
+	
+
+	?>
