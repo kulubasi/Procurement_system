@@ -118,18 +118,18 @@ if(isset($_SESSION['$username'])){
               <p>Approved requests
                   </p></a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="department.php" class="nav-link">
               <p>Postporned requests
                   </p></a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a href="lished.php" class="nav-link">
               <p>Published contracts
                   </p></a>
           </li>
           <li class="nav-item">
-            <a href="department.php" class="nav-link">
+            <a href="#" class="nav-link">
               <p>Awarded contracts
                   </p></a>
           </li>
@@ -144,16 +144,24 @@ if(isset($_SESSION['$username'])){
                   </p></a>
           </li>
           <li class="nav-item">
-            <a href="department.php" class="nav-link">
+            <a href="" class="nav-link">
               <p>Contracts management
                   </p></a>
           </li>
           <li class="nav-item">
-            <a href="department.php" class="nav-link">
+            <a href="" class="nav-link">
               <p>Recieved items
                   </p></a>
           </li>
+<<<<<<< HEAD
                    
+=======
+          <!-- <li class="nav-item">
+            <a href="" class="nav-link">
+              <p>History
+                  </p></a>
+          </li> -->         
+>>>>>>> c5e6cd11eccec296e26d63463842a9d2234f356c
                   </ul>
       </nav>
       <!-- /.sidebar-menu -->

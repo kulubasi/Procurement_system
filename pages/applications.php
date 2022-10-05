@@ -223,7 +223,8 @@ if(isset($_SESSION['$username'])){
                     $n+=1; 
                     
                     
-                   echo $n.'.'.' '. $c. ' apllied for the tender to supply'.$b. ' <a title="View details"   href="applicationdetails.php?id='.$x.'&bid='.$a.'" > View details</i></a>'.'<br/>'.'<br/>';
+                   echo $n.'.'.' '. $c. ' apllied for the tender to supply '.$b. ' <a title="View details"   href="applicationdetails.php?id='.$x.'&bid='.$a.'" > View details</i></a>'.'<br/>'.'<br/>';
+
      
                 }
          
