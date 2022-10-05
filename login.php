@@ -14,13 +14,9 @@ require_once("config.php");
 		}
 		else{
 			$sql = "SELECT *FROM users WHERE username='".$username."' AND password ='".$password."' ";
-			
 			$con = mysqli_query($db,$sql);
-			
 			$rows = mysqli_num_rows($con);
-			
             $records = mysqli_fetch_array($con);
-            
 			if($rows==0){
 				echo '<script type="text/javascript">alert("Wrong UserName or Password");window.location=\'index.php\';</script>';
     		}
@@ -32,12 +28,6 @@ require_once("config.php");
     				header("location:pages/departmentpage.php");
     			}
 
-    			elseif($supprows>=1){
-    			$_SESSION['id']=$supprecords['id'];
-				$_SESSION['$username']=$username;
-    			header("location:pages/supplierpage.php");
-    		}
-
     			elseif ($records['cod'] == 2) {
     				$_SESSION['id']=$records['id'];
 				    $_SESSION['$username']=$username;
@@ -45,22 +35,14 @@ require_once("config.php");
     			}
     			else{
     				$_SESSION['id']=$records['id'];
-				   $_SESSION['$username']=$username;
-
-				header("location:pages/admin.php");
+				    $_SESSION['$username']=$username;
+				    header("location:pages/admin.php");
 
     			}
     			
 			}
 
-			if($supprows==0){
-				echo '<script type="text/javascript">alert("Wrong UserName or Password");window.location=\'index.php\';</script>';
-    		}
-    		else{
-    			$_SESSION['id']=$supprecords['id'];
-				$_SESSION['$username']=$username;
-    			header("location:pages/supplierpage.php");}
-    		
+			
 
 		}
 		

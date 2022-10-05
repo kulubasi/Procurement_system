@@ -7,6 +7,7 @@ if(isset($_SESSION['$username'])){
 }
 ?>
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,7 +56,7 @@ if(isset($_SESSION['$username'])){
   <?php 
   $n = $_GET['id'];
   include("config.php");
-    $mydb ="SELECT * FROM   requests WHERE id ='".$n."' ";
+    $mydb ="SELECT * FROM   publish WHERE a_id ='".$n."' ";
     $run=mysqli_query($db,$mydb);
     if($run == true){
         while($row=mysqli_fetch_array($run)){
@@ -69,37 +70,57 @@ if(isset($_SESSION['$username'])){
          }
      }           
    ?>
+<?php 
+$x =$_SESSION['$username'];
+include("config.php");
+$mydb ="SELECT * FROM   suppliers WHERE username ='".$x."' ";
+    $run=mysqli_query($db,$mydb);
+    if($run == true){
+        while($row=mysqli_fetch_array($run)){
+            $a =$row[0];
+            $b=$row[1];
+            $c  =$row[2];
+            $d =$row[3];
+            $e =$row[5];
+            $f1 =$row[8];
+            $z =$row[7];
+         }
+     }   
 
+
+ ?>
        <div style="margin-right: 150px; margin-left: 150px">
  
     <form action="" method="post" enctype="multipart/form-data">
       <div class="modal-content">
     <div class="modal-body">
       <ol class="breadcrumb float-sm-right">
-             <li class="breadcrumb-item"><a href="supplierpage.php">Home</a>><a href="lished.php">Publishedrequests</a>><a href="lished.php">Details</a>>Apply</li>
+             <li class="breadcrumb-item"><a href="supplierpage.php">Home</a>><a href="details1.php">Details</a>>Apply</li>
             </ol>
+
       <div class="card card-primary">
       <div class="card-header">
 
         <h3 class="card-title" align="center">Apply for the tender</h3>
       </div>
         <div class="card-body">
+
         <div class="row">
           <div class="col-sm-6">
               <!-- text input -->
               <div class="form-group">
-                <input type="number" name="id" hidden value="Supply of <?php echo$a; ?>" >
+                <input type="number" name="id" hidden value="Supply of <?php echo$c; ?>" >
                 <label>Tender</label>
-                <input type="text" name="tender" class="form-control" value="<?php echo $b; ?>" >
+                <input type="text" name="tender" class="form-control" value="<?php echo"Supply of"." " .$c; ?>" >
 
               </div>
             </div>
             <div class="col-sm-6">
               <!-- text input -->
               <div class="form-group">
-                <input type="number" name="id" hidden value="Supply of <?php echo$a; ?>" >
+                <input type="number" name="id" hidden value="Supply of <?php echo$b; ?>" >
                 <label>Tender id</label>
-                <input type="text" name="id" class="form-control" value="<?php echo $a; ?>" >
+                <input type="text" name="id" class="form-control" value="<?php echo $b; ?>" >
 
               </div>
             </div>
@@ -108,7 +129,7 @@ if(isset($_SESSION['$username'])){
               <!-- text input -->
               <div class="form-group">
                 <label>Company name</label>
-                <input name="name" type="text" class="form-control" placeholder="Enter ...">
+                <input name="name" type="text" class="form-control" value="<?php echo$z; ?>">
               </div>
             </div>
 
@@ -116,7 +137,7 @@ if(isset($_SESSION['$username'])){
               <!-- text input -->
               <div class="form-group">
                 <label>Location/adress</label>
-                <input name="adress" type="text" class="form-control" placeholder="Enter ...">
+                <input name="adress" type="text" class="form-control" value="<?php echo$f1; ?>">
               </div>
             </div>
             <div class="col-sm-6">  
@@ -154,14 +175,13 @@ if(isset($_SESSION['$username'])){
             
             </div>
 
-      ---
           
               <div class="row">
                
                 <?php 
                 $n = $_GET['id'];
                 include("config.php");
-                $mydb ="SELECT * FROM   publish WHERE id ='".$n."' ";
+                $mydb ="SELECT * FROM   publish WHERE a_id ='".$n."' ";
                 $run=mysqli_query($db,$mydb);
                 if($run == true){
                     while($row=mysqli_fetch_array($run)){
@@ -193,7 +213,7 @@ if(isset($_SESSION['$username'])){
           <?php 
           $n = $_GET['id'];
           include("config.php");
-          $mydb ="SELECT * FROM   publish WHERE id ='".$n."' ";
+          $mydb ="SELECT * FROM   publish WHERE a_id ='".$n."' ";
           $run=mysqli_query($db,$mydb);
           if($run == true){
               while($row=mysqli_fetch_array($run)){
@@ -226,7 +246,7 @@ if(isset($_SESSION['$username'])){
           $n = $_GET['id'];
           // $f =$_GET['bid'];
           include("config.php");
-          $mydb ="SELECT * FROM   publish WHERE id ='".$n."' ";
+          $mydb ="SELECT * FROM   publish WHERE a_id ='".$n."' ";
           $run=mysqli_query($db,$mydb);
           if($run == true){
               while($row=mysqli_fetch_array($run)){
