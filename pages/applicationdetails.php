@@ -41,7 +41,7 @@ if(isset($_SESSION['$username'])){
  
 <div style="margin-right: 100px; margin-left: 100px">
   
-  <form role="form" method="post" action="">
+  
   <div class="modal-content">
     <div class="modal-body">
     	<ol class="breadcrumb float-sm-right">
@@ -160,7 +160,20 @@ if(isset($_SESSION['$username'])){
    ?>
    
     <form action="remark.php" method="post">
+      <?php
+      $q =$_SESSION['$username'];
+      include("config.php");
+      $mydb ="SELECT * FROM users WHERE username ='".$q."'";
+      $run=mysqli_query($db,$mydb);
+      if($run == true){
+        while($row=mysqli_fetch_array($run)){
+            $n1=$row[10];
+            
+            }}
+       ?>
               <p>Send feedback</p>
+
+              <input hidden type="text" name="sender" value="<?php echo $n1;?>">
               <input hidden type="text" name="supplier" value="<?php echo $u;?>">
               <input hidden type="tex" name="item" value="<?php echo $z;?>">
               <textarea class="form-control" name="remarks"></textarea>
@@ -171,7 +184,7 @@ if(isset($_SESSION['$username'])){
         
     </div>
  
-      </form>
+      
       </div>
         
 </body>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2022 at 07:24 AM
+-- Generation Time: Oct 05, 2022 at 07:23 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.0.19
 
@@ -50,10 +50,58 @@ CREATE TABLE `applications` (
 --
 
 INSERT INTO `applications` (`id`, `a_id`, `tender`, `name`, `adress`, `person`, `title`, `email`, `contact`, `doc1`, `doc2`, `doc3`, `dat`, `user`, `price`) VALUES
-(1, 3, 'chairs', 'Muni', 'Arua', 'John', 'Manager', 'nkwineinnocent5@gmail.com', '0785287421', 'NEGOTIATION STRATEGY AND PLANNING.pptx', 'TOPIC 2 (1).pptx', 'NATURE OF NEGOTIATION (1).pptx', '2022-09-21', '', ''),
+(1, 3, 'chairs', 'Muni', 'Arua', 'John', 'Manager', 'nkwineinnocent5@gmail.com', '0785287421', 'NEGOTIATION STRATEGY AND PLANNING.pptx', 'TOPIC 2 (1).pptx', 'NATURE OF NEGOTIATION (1).pptx', '2022-09-21', '', 'Ugsh1000,000/='),
 (1, 4, 'chairs', 'Muni', 'Arua', 'John', 'manager', 'nkwineinnocent5@gmail.com', '0785287421', 'y2mate.com - Ebibi byangye Yesu Akabyekorera HYMN 185 Runyankole Rukiga Church Of Uganda (2).mp3', 'y2mate.com - 250 IRA NKABA NINGIRA NTIRUNYANKORERUKIGA HYMNS.mp3', 'y2mate.com - Ira kunabaire ngwejegiire Hati Igura Runyankole Rukiga Hymn with New English Lyrics Song.mp3', '2022-09-21', '', ''),
 (1, 5, 'chairs', 'Muni', 'Arua', 'John', 'manager', 'nkwineinnocent5@gmail.com', '0785287421', 'y2mate.com - Ebibi byangye Yesu Akabyekorera HYMN 185 Runyankole Rukiga Church Of Uganda (2).mp3', 'y2mate.com - 250 IRA NKABA NINGIRA NTIRUNYANKORERUKIGA HYMNS.mp3', 'y2mate.com - Ira kunabaire ngwejegiire Hati Igura Runyankole Rukiga Hymn with New English Lyrics Song.mp3', '2022-09-21', '', ''),
 (1, 6, 'chairs', 'Muni', 'Arua', 'John', 'V.C', '1901200153@muni.ac.ug', '0785287422', 'NEGOTIATION STRATEGY AND PLANNING.pptx', 'TOPIC 2 (1).pptx', 'NATURE OF NEGOTIATION (1).pptx', '2022-09-21', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contract`
+--
+
+CREATE TABLE `contract` (
+  `id` int(100) NOT NULL,
+  `sup` varchar(100) NOT NULL,
+  `tender` varchar(100) NOT NULL,
+  `qty` varchar(100) NOT NULL,
+  `price` varchar(100) NOT NULL,
+  `contact` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phase` varchar(100) NOT NULL,
+  `official` varchar(100) NOT NULL,
+  `term` text NOT NULL,
+  `dat` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contract`
+--
+
+INSERT INTO `contract` (`id`, `sup`, `tender`, `qty`, `price`, `contact`, `email`, `phase`, `official`, `term`, `dat`) VALUES
+(1, 'Muni', 'Supply of  chairs', '20	chairs', 'ugsh 5,000,000', '0785287422', '1901200153@muni.ac.ug', '3', 'Iga Isaac', 'The supplier must deliver on time', '2022-10-05');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feed`
+--
+
+CREATE TABLE `feed` (
+  `id` int(100) NOT NULL,
+  `sender` varchar(100) NOT NULL,
+  `supplier` varchar(100) NOT NULL,
+  `item` varchar(100) NOT NULL,
+  `message` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `feed`
+--
+
+INSERT INTO `feed` (`id`, `sender`, `supplier`, `item`, `message`) VALUES
+(1, 'muni', '', 'chairs', 'We viewed your application please come to the head office with the original copies of the documents ');
 
 -- --------------------------------------------------------
 
@@ -106,7 +154,8 @@ CREATE TABLE `rating` (
 --
 
 INSERT INTO `rating` (`id`, `name`, `tender`, `price`, `services`, `quality`, `requirements`, `comment`, `official`, `dat`) VALUES
-(2, 'Muni', 'supply of  chairs', 'ugsh 5,000,000', '3', '3', '2', 'The supplier is not good', 'Iga Isaac', '2022-10-02');
+(2, 'Muni', 'supply of  chairs', 'ugsh 5,000,000', '3', '3', '2', 'The supplier is not good', 'Iga Isaac', '2022-10-02'),
+(3, '<br /><b>Warning</b>:  Undefined variable $i in <b>C:xampphtdocsProcurement_systempagesaward.php</b>', '', '', '', 'score', 'score', '', 'Iga Isaac', '2022-10-05');
 
 -- --------------------------------------------------------
 
@@ -133,6 +182,31 @@ CREATE TABLE `requests` (
 
 INSERT INTO `requests` (`id`, `item`, `qty`, `purpose`, `requestor`, `dat`, `processor`, `department`, `status`, `org`) VALUES
 (1, 'chairs', '20', 'for lecturers in the staff', 'abdu', '2022-09-16 ', 'annet', 'Computer science', 'approved', 'muni');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `suppliers`
+--
+
+CREATE TABLE `suppliers` (
+  `id` int(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `fname` varchar(100) NOT NULL,
+  `lname` varchar(100) NOT NULL,
+  `uername` varchar(100) NOT NULL,
+  `tel` varchar(100) NOT NULL,
+  `pswd` varchar(100) NOT NULL,
+  `comp` varchar(100) NOT NULL,
+  `location` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `suppliers`
+--
+
+INSERT INTO `suppliers` (`id`, `email`, `fname`, `lname`, `uername`, `tel`, `pswd`, `comp`, `location`) VALUES
+(1, 'julien@gmail.com\r\n', 'julien\r\n', 'ahako\r\n', 'julien22\r\n', '0786543234\r\n', 'Julien@22\r\n', 'ICT Specialist\r\n', 'Arua');
 
 -- --------------------------------------------------------
 
@@ -211,6 +285,18 @@ ALTER TABLE `applications`
   ADD PRIMARY KEY (`a_id`);
 
 --
+-- Indexes for table `contract`
+--
+ALTER TABLE `contract`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `feed`
+--
+ALTER TABLE `feed`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `publish`
 --
 ALTER TABLE `publish`
@@ -226,6 +312,12 @@ ALTER TABLE `rating`
 -- Indexes for table `requests`
 --
 ALTER TABLE `requests`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `suppliers`
+--
+ALTER TABLE `suppliers`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -245,6 +337,18 @@ ALTER TABLE `applications`
   MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `contract`
+--
+ALTER TABLE `contract`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `feed`
+--
+ALTER TABLE `feed`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `publish`
 --
 ALTER TABLE `publish`
@@ -254,12 +358,18 @@ ALTER TABLE `publish`
 -- AUTO_INCREMENT for table `rating`
 --
 ALTER TABLE `rating`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `requests`
 --
 ALTER TABLE `requests`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `suppliers`
+--
+ALTER TABLE `suppliers`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --

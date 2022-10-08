@@ -154,10 +154,7 @@ if(isset($_SESSION['$username'])){
                   </p></a>
           </li>
           <li class="nav-item">
-            <a href="department.php" class="nav-link">
-              <p>History
-                  </p></a>
-          </li>         
+                   
                   </ul>
       </nav>
       <!-- /.sidebar-menu -->
