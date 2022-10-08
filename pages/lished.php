@@ -222,10 +222,10 @@ if(isset($_SESSION['$username'])){
               
                 while($row=mysqli_fetch_array($run)){
                     $a =$row[0];
-                    $b=$row[1];
-                    $c  =$row[2];
-                    $d =$row[3];
-                    $e =$row[9];
+                    $b=$row[2];
+                    $c  =$row[3];
+                    $d =$row[4];
+                    $e =$row[10];
                     $f =$row[4];
                     $g =$row[7];
                     
