@@ -97,7 +97,7 @@ if(isset($_SESSION['$username'])){
           <img src="../dist/img/FaceApp_164335736658_1.jpg" class="img-circle elevation-2 text-white" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Supplier</a>
+          <a href="#" class="d-block"><?php echo $_SESSION['$username']; ?></a>
         </div>
       </div>
 
@@ -424,45 +424,56 @@ if(isset($_SESSION['$username'])){
             include("config.php");
             $k =$_SESSION['$username'];
             //$user  =$_SESSION['$username_j'];
-            $my_db ="SELECT * FROM   users WHERE username='".$k."'";
-            $ran=mysqli_query($db,$my_db);
+            $suppdetails="SELECT * FROM suppliers WHERE username = '".$k."'";
+            //$my_db ="SELECT * FROM   contract WHERE username='".$k."'";
+            $ran=mysqli_query($db,$suppdetails);
             if($ran == true){
               
                 while($raw=mysqli_fetch_array($ran)){
-                    $m =$raw[10];
-                
-                $m =$raw[10];
-                
-            }}
+                    $m =$raw[7];
+
+                    $mydb ="SELECT * FROM   contract WHERE sup ='".$m."'";
+                    $run=mysqli_query($db,$mydb);
+                    if($run == true){
+                      
+                        while($row=mysqli_fetch_array($run)){
+                            $a =$row[0];
+                            $b=$row[1];
+                            $c  =$row[2];
+                            $d =$row[3];
+                            $e =$row[5];
+                            $f =$row[4];
+                            $g =$row[7];
+                            $h =$row[8];
+                            $i =$row[9];
+                            $j =$row[10];
+                            
+                            
+                            
+                          echo '<tr>';
+                            echo'<td>' . $a.'</td>';
+                            echo'<td>' .$b.'</td>';
+                            echo'<td>' .$c.'</td>';
+                            echo'<td>' .$d.'</td>';
+                            echo'<td>' .$e.'</td>';
+                            echo'<td>' .$f.'</td>';
+                            echo'<td>' .$g.'</td>';
+                            echo'<td>' .$h.'</td>';
+                            echo'<td>' .$i.'</td>';
+                            echo'<td>' .$j.'</td>';
+                            // echo  '<td align="center" > <a  href="publish.php?id='.$a.'"  class="btn btn-primary btn-xs  "> Publish</a>  <a  href="\example\capston\project\look.php?id='.$a.'"  class="btn btn-danger btn-xs  "> Delete</a></td>';
+                          echo '</tr>';
+             
+                        }
+                 
+                    }
+                        
+
+                        
+                    }
+                  }
            
-            $mydb ="SELECT * FROM   requests WHERE status ='approved' AND org='".$m."'";
-            $run=mysqli_query($db,$mydb);
-            if($run == true){
-              
-                while($row=mysqli_fetch_array($run)){
-                    $a =$row[0];
-                    $b=$row[1];
-                    $c  =$row[2];
-                    $d =$row[3];
-                    $e =$row[5];
-                    $f =$row[4];
-                    $g =$row[7];
-                    
-                    
-                  echo '<tr>';
-                    echo'<td>' . $a.'</td>';
-                    echo'<td>' .$b.'</td>';
-                    echo'<td>' .$c.'</td>';
-                    echo'<td>' .$d.'</td>';
-                    echo'<td>' .$e.'</td>';
-                    echo'<td>' .$f.'</td>';
-                    echo'<td>' .$g.'</td>';
-                    echo  '<td align="center" > <a  href="publish.php?id='.$a.'"  class="btn btn-primary btn-xs  "> Publish</a>  <a  href="\example\capston\project\look.php?id='.$a.'"  class="btn btn-danger btn-xs  "> Delete</a></td>';
-                  echo '</tr>';
-     
-                }
-         
-            }else{
+            else{
             echo "<h3 >There are no pedding requests</h3>". mysqli_error($db);
             }
           

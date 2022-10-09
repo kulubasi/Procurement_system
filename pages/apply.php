@@ -118,7 +118,7 @@ $mydb ="SELECT * FROM   suppliers WHERE username ='".$x."' ";
             <div class="col-sm-6">
               <!-- text input -->
               <div class="form-group">
-                <input type="number" name="id" hidden value="Supply of <?php echo$b; ?>" >
+                <input type="number" name="id" hidden value="Supply of <?php echo$a; ?>" >
                 <label>Tender id</label>
                 <input type="text" name="id" class="form-control" value="<?php echo $b; ?>" >
 
@@ -159,14 +159,14 @@ $mydb ="SELECT * FROM   suppliers WHERE username ='".$x."' ";
               <!-- text input -->
               <div class="form-group">
                 <label>Email</label>
-                <input name="email" type="text" class="form-control" placeholder="Enter ...">
+                <input name="email" type="text" class="form-control" value="<?php echo$b; ?>" placeholder="Enter ...">
               </div>
             </div>
             <div class="col-sm-6">
               <!-- text input -->
               <div class="form-group">
                 <label>Contact</label>
-                <input name="contact" type="text" class="form-control" placeholder="Enter ...">
+                <input name="contact" type="text"  class="form-control" value="<?php echo$e; ?>" placeholder="Enter ...">
               </div>
             </div>
 
