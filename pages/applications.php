@@ -176,7 +176,7 @@ if(isset($_SESSION['$username'])){
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a>>appplications</li>
+              <li class="breadcrumb-item"><a href="procurement_board.php">Home</a>>appplications</li>
             </ol>
             
           </div><!-- /.col -->

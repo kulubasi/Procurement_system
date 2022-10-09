@@ -156,10 +156,11 @@ if(isset($_SESSION['$username'])){
               <i class="nav-icon fas fa-building"></i><p>Available bids
                   </p></a>
           </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link"><i class="nav-icon fas fa-clone"></i><p>Previous Contracts</p></a>
-    
+          <li class="nav-item has-treeview" id="awardtwigger">
+            <a class="nav-link">
+              <i class="nav-icon fas fa-clone"></i><p>Awarded Contracts</p></a>
           </li>
+
           <!-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-palette"></i>
@@ -186,14 +187,14 @@ if(isset($_SESSION['$username'])){
               </p>
             </a>
           </li> -->
-          <li class="nav-item has-treeview ">
+          <!-- <li class="nav-item has-treeview ">
             <a href="#" class="nav-link ">
               <i class="fas fa-inventory"></i>
               <p>
                 
               </p>
             </a>
-          </li>
+          </li> -->
           
                   </ul>
       </nav>
@@ -322,6 +323,8 @@ if(isset($_SESSION['$username'])){
 
     <!-- Main content -->
 
+    
+
 
 
     <section class="content supphome" id="supphome">
@@ -349,7 +352,7 @@ if(isset($_SESSION['$username'])){
               <div class="inner">
                 <h3><i class="fa fa-shopping-cart"></i>0</h3>
 
-                <p>Previous Contracts</p>
+                <p >Awarded Contracts</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -395,6 +398,11 @@ if(isset($_SESSION['$username'])){
       </div><!-- /.container-fluid -->
     </section>
 
+    <!-- sectiontwiggeredby awardstwigger -->
+    <section class="awards" id="awards">
+      <p>Here are the awards</p>
+      
+    </section>
 
     <!-- section twiggered by open bids -->
     <section id="availablebids" class="availablebids">
@@ -518,6 +526,8 @@ if(isset($_SESSION['$username'])){
   let availablebids = document.getElementById('availablebids');
   let supphome = document.getElementById('supphome');
   let avbidstwigger = document.getElementById('avbidstwigger');
+  let awardtwigger = document.getElementById('awardtwigger');
+  let awards = document.getElementById('awards');
   
 
   availablebidstwigger.addEventListener('click',(e)=>{
@@ -530,6 +540,14 @@ if(isset($_SESSION['$username'])){
   avbidstwigger.addEventListener('click',(e)=>{
     e.preventDefault();
     availablebids.classList.add('active')
+    supphome.classList.add('active')
+    // document.body.classList.add('overflow')
+  })
+
+  awardtwigger.addEventListener('click',(e)=>{
+    e.preventDefault();
+    awards.classList.add('active')
+    availablebids.classList.remove('active')
     supphome.classList.add('active')
     // document.body.classList.add('overflow')
   })

@@ -258,6 +258,9 @@ main{
 .availablebids{display: none;}
 .availablebids.active{display: block;}
 
+.awards{display: none;}
+.awards.active{display: block;}
+
 /*.avbids.active{display: none;}*/
 
 /* The message box is shown when the user clicks on the password field */
