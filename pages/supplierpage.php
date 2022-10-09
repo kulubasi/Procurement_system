@@ -401,14 +401,82 @@ if(isset($_SESSION['$username'])){
     <!-- sectiontwiggeredby awardstwigger -->
     <section class="awards" id="awards">
       <div style="margin-left: 50px;">
-        <p >Here are the awards</p>
+        <h3>Below are your current contracts</h3>
+        <table class="table table-striped" id="tb">
+          <thead>
+            <tr>
+            <th>Id</th>
+            <th>Supplier name</th>
+            <th>Tender</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Contact</th>
+            <th>Email</th>
+            <th>Phases</th>
+            <th>Official</th>
+            <th>Terms & Conditions</th>
+            <th>Date Awarded</th>
+          </tr>
+          </thead>
+
+          <tbody>
+            <?php
+            include("config.php");
+            $k =$_SESSION['$username'];
+            //$user  =$_SESSION['$username_j'];
+            $my_db ="SELECT * FROM   users WHERE username='".$k."'";
+            $ran=mysqli_query($db,$my_db);
+            if($ran == true){
+              
+                while($raw=mysqli_fetch_array($ran)){
+                    $m =$raw[10];
+                
+                $m =$raw[10];
+                
+            }}
+           
+            $mydb ="SELECT * FROM   requests WHERE status ='approved' AND org='".$m."'";
+            $run=mysqli_query($db,$mydb);
+            if($run == true){
+              
+                while($row=mysqli_fetch_array($run)){
+                    $a =$row[0];
+                    $b=$row[1];
+                    $c  =$row[2];
+                    $d =$row[3];
+                    $e =$row[5];
+                    $f =$row[4];
+                    $g =$row[7];
+                    
+                    
+                  echo '<tr>';
+                    echo'<td>' . $a.'</td>';
+                    echo'<td>' .$b.'</td>';
+                    echo'<td>' .$c.'</td>';
+                    echo'<td>' .$d.'</td>';
+                    echo'<td>' .$e.'</td>';
+                    echo'<td>' .$f.'</td>';
+                    echo'<td>' .$g.'</td>';
+                    echo  '<td align="center" > <a  href="publish.php?id='.$a.'"  class="btn btn-primary btn-xs  "> Publish</a>  <a  href="\example\capston\project\look.php?id='.$a.'"  class="btn btn-danger btn-xs  "> Delete</a></td>';
+                  echo '</tr>';
+     
+                }
+         
+            }else{
+            echo "<h3 >There are no pedding requests</h3>". mysqli_error($db);
+            }
+          
+                  
+            ?>
+          </tbody>
+        </table>
       </div>
       
     </section>
 
     <!-- section twiggered by open bids -->
     <section id="availablebids" class="availablebids">
-      <div class="container">
+      <div class="container" style="margin-left: 40px;">
 
         <!-- Small boxes (Stat box) -->
     
@@ -513,6 +581,7 @@ if(isset($_SESSION['$username'])){
 <script>
   $(function () {
     $("#example1").DataTable();
+    $("#tb").DataTable();
     $('#example2').DataTable({
       "paging": true,
       "lengthChange": false,
@@ -536,6 +605,7 @@ if(isset($_SESSION['$username'])){
     e.preventDefault();
     availablebids.classList.add('active')
     supphome.classList.add('active')
+    awards.classList.remove('active')
     // document.body.classList.add('overflow')
   })
 
