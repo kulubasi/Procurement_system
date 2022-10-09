@@ -91,7 +91,7 @@ if(isset($_SESSION['$username'])){
           <img src="../dist/img/FaceApp_1643357366584_1.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Nkwine Innocent</a>
+          <a href="#" class="d-block">user</a>
         </div>
       </div>
 
