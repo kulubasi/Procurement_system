@@ -400,7 +400,9 @@ if(isset($_SESSION['$username'])){
 
     <!-- sectiontwiggeredby awardstwigger -->
     <section class="awards" id="awards">
-      <p>Here are the awards</p>
+      <div style="margin-left: 50px;">
+        <p >Here are the awards</p>
+      </div>
       
     </section>
 
