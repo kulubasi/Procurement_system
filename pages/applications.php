@@ -201,6 +201,7 @@ if(isset($_SESSION['$username'])){
             <!-- /.card-header -->
             <div class="card-body">
             
+            <div class="row">
               
             <?php
             //$user  =$_SESSION['$username_j'];
@@ -223,7 +224,15 @@ if(isset($_SESSION['$username'])){
                     $n+=1; 
                     
                     
-                   echo $n.'.'.' '. $c. ' apllied for the tender to supply '.$b. ' <a title="View details"   href="applicationdetails.php?id='.$x.'&bid='.$a.'" > View details</i></a>'.'<br/>'.'<br/>';
+                   // echo $n.'.'.' '. $c. ' apllied for the tender to supply '.$b. ' <a title="View details"   href="applicationdetails.php?id='.$x.'&bid='.$a.'" > View details</i></a>'.'<br/>'.'<br/>';
+
+                   echo '<div class="col-6"><div class="card ">
+                          <div class="card-body">
+                            <h5 class="card-title text-center">'.$c.'</h5>
+                            <p class="card-text">Applied for the tender to supply '.$b.'</p>
+                            <a href="applicationdetails.php?id='.$x.'&bid='.$a.'" class="btn btn-primary">View Details</a>
+                          </div>
+                        </div></div>';
 
      
                 }
@@ -233,6 +242,7 @@ if(isset($_SESSION['$username'])){
             }
                   
             ?>
+            </div>
               
             
               <div class="modal fade show" id="edit" aria-modal="true">

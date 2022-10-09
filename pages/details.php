@@ -93,7 +93,7 @@
             <a title="Edit"   href="details.php?id='.$a.'"  class="btn btn-primary btn-xm  ">  <i class="fa fa-edit"></i></a> 
             </div>
              <div class="col-sm-4">
-              <label>Delet</label>
+              <label>Delete</label>
               <br/>
                <a title="Delet"   href="details.php?id='.$a.'"  class="btn btn-danger btn-xm  ">  <i class="fa fa-trash"></i></a> 
             </div>
