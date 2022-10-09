@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 05, 2022 at 07:10 PM
+-- Generation Time: Oct 09, 2022 at 09:34 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.0.19
 
@@ -71,6 +71,10 @@ CREATE TABLE `contract` (
   `email` varchar(100) NOT NULL,
   `phase` varchar(100) NOT NULL,
   `official` varchar(100) NOT NULL,
+  `phase1` varchar(100) NOT NULL,
+  `phase2` varchar(100) NOT NULL,
+  `phase3` varchar(100) NOT NULL,
+  `phase4` varchar(100) NOT NULL,
   `term` text NOT NULL,
   `dat` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -79,8 +83,8 @@ CREATE TABLE `contract` (
 -- Dumping data for table `contract`
 --
 
-INSERT INTO `contract` (`id`, `sup`, `tender`, `qty`, `price`, `contact`, `email`, `phase`, `official`, `term`, `dat`) VALUES
-(1, 'Muni', 'Supply of  chairs', '20	chairs', 'ugsh 5,000,000', '0785287422', '1901200153@muni.ac.ug', '3', 'Iga Isaac', 'The supplier must deliver on time', '2022-10-05');
+INSERT INTO `contract` (`id`, `sup`, `tender`, `qty`, `price`, `contact`, `email`, `phase`, `official`, `phase1`, `phase2`, `phase3`, `phase4`, `term`, `dat`) VALUES
+(1, 'Muni', 'Supply of  chairs', '20	chairs', 'ugsh 5,000,000', '0785287422', '1901200153@muni.ac.ug', '3', 'Iga Isaac', '2022-10-10', '2022-10-10', '2022-10-10', '', 'The supplier must deliver on time', '2022-10-05');
 
 -- --------------------------------------------------------
 

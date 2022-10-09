@@ -296,7 +296,7 @@ if(isset($_SESSION['$username'])){
       VALUES('".$sup."','".$tender."','".$qty."','".$price."','".$contact."','".$email."','".$phase."','".$official."','".$term."','".$dat."')";
         $run=mysqli_query($db,$sql);
         if ($run==true) {
-          echo '<a title="set dates"   href="dates.php?id='.$sup.'&bid='.$tender.'" >set the delivery dates</a>';
+          echo '<script type="text/javascript">alert("You have successfully awarded a contract continue and set dates");window.location=\'awarded.php\';</script>';
           }else{
             echo "ERROR: Hush! sorry there was error try again." . mysqli_error($db);
           }
