@@ -14,7 +14,7 @@
         $sql = "INSERT INTO suppliers (email,fname,lname,username,tel,pswd,comp,location) VALUES ('".$email."', '".$fname."','".$lname."','".$username."', '".$tel."', '".$password."','".$comp."','".$location."')";
 
         if (mysqli_query($db, $sql)) {
-          echo '<script type="text/javascript">alert("You have succefully created an account you can now log in");window.location=\'Procurement_system/supplierlogin.php\';</script>'; 
+          echo '<script type="text/javascript">alert("You have succefully created an account you can now log in");window.location=\'../supplierlogin.php\';</script>'; 
         } 
         else {
           echo "Error: " . $sql . "<br>" . mysqli_error($dbconn);
