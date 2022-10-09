@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 05, 2022 at 07:23 PM
+-- Generation Time: Oct 05, 2022 at 07:10 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.0.19
 
@@ -93,15 +93,16 @@ CREATE TABLE `feed` (
   `sender` varchar(100) NOT NULL,
   `supplier` varchar(100) NOT NULL,
   `item` varchar(100) NOT NULL,
-  `message` varchar(100) NOT NULL
+  `message` varchar(100) NOT NULL,
+  `view` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `feed`
 --
 
-INSERT INTO `feed` (`id`, `sender`, `supplier`, `item`, `message`) VALUES
-(1, 'muni', '', 'chairs', 'We viewed your application please come to the head office with the original copies of the documents ');
+INSERT INTO `feed` (`id`, `sender`, `supplier`, `item`, `message`, `view`) VALUES
+(1, 'muni', '', 'chairs', 'We viewed your application please come to the head office with the original copies of the documents ', '');
 
 -- --------------------------------------------------------
 
@@ -194,7 +195,7 @@ CREATE TABLE `suppliers` (
   `email` varchar(100) NOT NULL,
   `fname` varchar(100) NOT NULL,
   `lname` varchar(100) NOT NULL,
-  `uername` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
   `tel` varchar(100) NOT NULL,
   `pswd` varchar(100) NOT NULL,
   `comp` varchar(100) NOT NULL,
@@ -205,8 +206,8 @@ CREATE TABLE `suppliers` (
 -- Dumping data for table `suppliers`
 --
 
-INSERT INTO `suppliers` (`id`, `email`, `fname`, `lname`, `uername`, `tel`, `pswd`, `comp`, `location`) VALUES
-(1, 'julien@gmail.com\r\n', 'julien\r\n', 'ahako\r\n', 'julien22\r\n', '0786543234\r\n', 'Julien@22\r\n', 'ICT Specialist\r\n', 'Arua');
+INSERT INTO `suppliers` (`id`, `email`, `fname`, `lname`, `username`, `tel`, `pswd`, `comp`, `location`) VALUES
+(2, 'nkwineinnocent@gmail.com', 'Agaba', 'Amon', 'john', '0785287421', 'John@222', 'ICT Specialists', 'Arua');
 
 -- --------------------------------------------------------
 
@@ -370,7 +371,7 @@ ALTER TABLE `requests`
 -- AUTO_INCREMENT for table `suppliers`
 --
 ALTER TABLE `suppliers`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`

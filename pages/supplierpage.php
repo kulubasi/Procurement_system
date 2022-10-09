@@ -107,7 +107,7 @@ if(isset($_SESSION['$username'])){
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
            <li class="nav-item ">
-            <a href="supplierpage.php" class="nav-link">
+            <a href="supplierpage.php" class="nav-link active">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Home
@@ -122,6 +122,35 @@ if(isset($_SESSION['$username'])){
               </p>
             </a>
           </li> -->
+          <li class="nav-item ">
+            <a href="message.php" class="nav-link">
+              <i class="fa fa-envelope " ></i>
+              <span class="label label-primary pull-right" style="color: white;">
+                <?php
+                include("config.php");
+                $now =$_SESSION['$username'];
+                $sql = " SELECT *FROM feed WHERE supplier='$now' AND view=''";
+                $con = mysqli_query($db,$sql);
+                $b =0;
+                if(mysqli_num_rows($con) > 0){
+                    $a =0;
+                    while($row=mysqli_fetch_array($con)){
+                        $a+=1;
+                    }
+                    echo $a;
+                    
+                }else{
+                    echo $b;
+                }
+                
+                ?>
+
+            </span>
+              <p>
+                Messages
+              </p>
+            </a>
+          </li>
           <li class="nav-item has-treeview ">
             <a href="" class="nav-link" id="availablebidstwigger">
               <i class="nav-icon fas fa-building"></i><p>Available bids

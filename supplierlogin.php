@@ -25,10 +25,10 @@
     <a href="../../index2.html"><b>Procurement</b>System</a>
   </div>
   <!-- /.login-logo -->
-  <form action="login.php" method="post">
+  <form action="log.php" method="post">
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your journey</p>
+      <p class="login-box-msg">Sign as a supplier</p>
 
         <div class="input-group mb-3">
           <input type="text" class="form-control" name="username" placeholder="Username">
@@ -56,9 +56,7 @@
         <button class="btn btn-block btn-primary" type="submit" name="login">
           <i class="fa fa-unlock"></i> Sign in
         </button><br>
-         <p>For suppliers  <a href="supplierlogin.php">Sign in here</a></p>
-        <p>For Organizations <a href="pages/superreg.php">Register here</a></p>
-      
+         <p>Dont have an account <a href="pages/signup.php">Signup</a></p>
       </div>
 
     </div>

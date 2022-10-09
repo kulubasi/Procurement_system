@@ -8,22 +8,19 @@
         $username=$_POST['username'];
         $tel=$_POST['tel'];
         $password=$_POST['password'];
+        $comp=$_POST['comp'];
+        $location=$_POST['location'];
         
-        
-
-        $sql = "INSERT INTO suppliers (`email`, `fname`,`lname`,`username`,`tel`,`pswd`) VALUES ('$email', '$fname','$lname','$username', '$tel', '$password')";
+        $sql = "INSERT INTO suppliers (email,fname,lname,username,tel,pswd,comp,location) VALUES ('".$email."', '".$fname."','".$lname."','".$username."', '".$tel."', '".$password."','".$comp."','".$location."')";
 
         if (mysqli_query($db, $sql)) {
-          echo "New user has been created successfully";
-          echo "<script>window.location.href='aftersign.html';</script>";
-          //header('Location:managerhome.php');
-          //exit();
+          echo '<script type="text/javascript">alert("You have succefully created an account you can now log in");window.location=\'Procurement_system/supplierlogin.php\';</script>'; 
         } 
         else {
           echo "Error: " . $sql . "<br>" . mysqli_error($dbconn);
         }
 
-        mysqli_close($conn);
+       
           
         //}
         
@@ -110,6 +107,22 @@
             </div>
           </div>
         </div>
+         <div class="input-group mb-3">
+          <input type="text" class="form-control" name="comp" placeholder="Company name" required>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+         <div class="input-group mb-3">
+          <input type="text" class="form-control" name="location" placeholder="Location" required>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
         <div class="input-group mb-3">
           <!-- <input type="text" class="form-control" name="category" placeholder="Category"> -->
           <select name="category" id="cars" class="form-control" required>
@@ -139,7 +152,7 @@
         </div>
 
         <div class="input-group mb-3">
-          <input type="password" class="form-control" id="rppassword" name="rppassword" onkeyup="chkpwd();" placeholder="Repeat Password" required>
+          <input type="password" class="form-control" name="rppassword" onkeyup="chkpwd();" placeholder="Repeat Password" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
