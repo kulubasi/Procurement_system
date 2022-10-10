@@ -121,10 +121,21 @@ if(isset($_SESSION['$username'])){
             <a href="message.php" class="nav-link active">
               <i class="fa fa-envelope " ></i>
               <span class="label label-primary pull-right" style="color: white;">
-                <?php
+                 <?php
                 include("config.php");
-                $now =$_SESSION['$username'];
-                $sql = " SELECT *FROM feed WHERE supplier='$now' AND view=''";
+                $k =$_SESSION['$username'];
+                //$user  =$_SESSION['$username_j'];
+                $my_db ="SELECT * FROM   suppliers WHERE username='".$k."'";
+                $ran=mysqli_query($db,$my_db);
+                if($ran == true){
+                  
+                    while($raw=mysqli_fetch_array($ran)){
+                        $m =$raw[7];
+                    
+                        
+                    
+                }}
+                $sql = " SELECT *FROM feed WHERE supplier='$m' AND view=''";
                 $con = mysqli_query($db,$sql);
                 $b =0;
                 if(mysqli_num_rows($con) > 0){
@@ -176,7 +187,7 @@ if(isset($_SESSION['$username'])){
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-        <div class="row">
+       
         <div class="col-12">
           <div class="card">
             <div class="card-header">
@@ -209,12 +220,22 @@ if(isset($_SESSION['$username'])){
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-        <div class="row">
-          <div class="col-lg-6">
+        
             <?php
-            $x =$_SESSION['$username'];
             include("config.php");
-            $mydb ="SELECT * FROM feed WHERE supplier ='".$x."' ";
+            $k =$_SESSION['$username'];
+                //$user  =$_SESSION['$username_j'];
+            $my_db ="SELECT * FROM   suppliers WHERE username='".$k."'";
+            $ran=mysqli_query($db,$my_db);
+            if($ran == true){
+              
+                while($raw=mysqli_fetch_array($ran)){
+                    $m =$raw[7];
+                
+                    
+                
+            }}
+            $mydb ="SELECT * FROM feed WHERE supplier ='".$m."' ";
             $run=mysqli_query($db,$mydb);
             $supprows = mysqli_num_rows($run);
             if($supprows!=0){
@@ -225,9 +246,7 @@ if(isset($_SESSION['$username'])){
                 $b=$row[2];
                 $c  =$row[3];
                 $d =$row[4];
-                $e =$row[10];
-                $f =$row[5];
-                $g =$row[8];  
+                $f =$row[5];  
                 $n+=1;                  
               echo $n.'.'.' '. $y.' responded to your application to supply'." ".$c." ".'you can click the button at the end of the message to view details'. ' <a title="View details"   href="messagedetails.php?id='.$a.'"  class="btn btn-primary btn-xm  ">  <i class="fa fa-eye"></i></a>'.'<br/>'.'<br/>';
  

@@ -128,8 +128,19 @@ if(isset($_SESSION['$username'])){
               <span class="label label-primary pull-right" style="color: white;">
                 <?php
                 include("config.php");
-                $now =$_SESSION['$username'];
-                $sql = " SELECT *FROM feed WHERE supplier='$now' AND view=''";
+                $k =$_SESSION['$username'];
+                //$user  =$_SESSION['$username_j'];
+                $my_db ="SELECT * FROM   suppliers WHERE username='".$k."'";
+                $ran=mysqli_query($db,$my_db);
+                if($ran == true){
+                  
+                    while($raw=mysqli_fetch_array($ran)){
+                        $m =$raw[7];
+                    
+                        
+                    
+                }}
+                $sql = " SELECT *FROM feed WHERE supplier='$m' AND view=''";
                 $con = mysqli_query($db,$sql);
                 $b =0;
                 if(mysqli_num_rows($con) > 0){

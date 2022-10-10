@@ -62,7 +62,7 @@ if(isset($_SESSION['$username'])){
   $a = $_GET['bid'];
   $c = $_GET['id'];
   include("config.php");
-    $mydb ="SELECT * FROM   publish WHERE id ='".$a."'";
+    $mydb ="SELECT * FROM   publish WHERE a_id ='".$a."'";
     $run=mysqli_query($db,$mydb);
     if($run == true){
         while($row=mysqli_fetch_array($run)){
@@ -174,8 +174,9 @@ if(isset($_SESSION['$username'])){
               <p>Send feedback</p>
 
               <input hidden type="text" name="sender" value="<?php echo $n1;?>">
-              <input hidden type="text" name="supplier" value="<?php echo $u;?>">
-              <input hidden type="tex" name="item" value="<?php echo $z;?>">
+              <input hidden type="text" name="supplier" value="<?php echo $d;?>">
+              <input hidden type="text" name="supplier" value="<?php echo $d;?>">
+              <input  type="tex" name="item" value="<?php echo $z;?>">
               <textarea class="form-control" name="remarks"></textarea>
               <input class="btn btn-primary" type="submit" name="send" value="send">
             </form>

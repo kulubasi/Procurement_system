@@ -61,7 +61,7 @@ if(isset($_SESSION['$username'])){
     if($run == true){
         while($row=mysqli_fetch_array($run)){
             $a =$row[0];
-            $b=$row[1];
+            $b1=$row[1];
             $c  =$row[2];
             $d =$row[3];
             $e =$row[5];
@@ -120,7 +120,7 @@ $mydb ="SELECT * FROM   suppliers WHERE username ='".$x."' ";
               <div class="form-group">
                 <input type="number" name="id" hidden value="Supply of <?php echo$a; ?>" >
                 <label>Tender id</label>
-                <input type="text" name="id" class="form-control" value="<?php echo $b; ?>" >
+                <input type="text" name="id" class="form-control" value="<?php echo $b1; ?>" >
 
               </div>
             </div>
@@ -193,8 +193,9 @@ $mydb ="SELECT * FROM   suppliers WHERE username ='".$x."' ";
                         $f =$row[4];
                         $h =$row[6];
                         $g =$row[7];
+                        $i =$row[8];
                         if($h !=''){
-                        echo'<div class="col-sm-4">'.$e.
+                        echo'<div class="col-sm-4">'.$h.
               '</div>'.'
               <div class="col-sm-4">
                 <input type="file" name="doc1" class="form-control" placeholder="Enter...." >
@@ -226,7 +227,7 @@ $mydb ="SELECT * FROM   suppliers WHERE username ='".$x."' ";
                   $h =$row[6];
                   $g =$row[7];
                   if($h !=''){
-                  echo'<div class="col-sm-4">'.$h.
+                  echo'<div class="col-sm-4">'.$g.
         '</div>'.'
         <div class="col-sm-4">
           <input type="file" name="doc2" class="form-control" placeholder="Enter...." >
@@ -259,7 +260,7 @@ $mydb ="SELECT * FROM   suppliers WHERE username ='".$x."' ";
                   $h =$row[6];
                   $g =$row[7];
                   if($g !=''){
-                  echo'<div class="col-sm-4">'.$g.
+                  echo'<div class="col-sm-4">'.$i.
         '</div>'.'
         <div class="col-sm-4">
           <input type="file" name="doc3" class="form-control" placeholder="Enter...." >
