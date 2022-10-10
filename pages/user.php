@@ -10,8 +10,9 @@
 			$username	    = $_POST["username"];
 			$password	    = $_POST["password"];
 			$cod			= $_POST["cod"];
-			$sql = " INSERT INTO users (fname,lname,department,position,email,contact,username,password,cod	)
-			VALUES('$firstname','$lastname','$department','$designation','$emailadress','$contact','$username','$password','$cod')"; 
+			$org			= $_POST["org"];
+			$sql = " INSERT INTO users (fname,lname,department,position,email,contact,username,password,cod,org	)
+			VALUES('$firstname','$lastname','$department','$designation','$emailadress','$contact','$username','$password','$cod','$org')"; 
 			$run=mysqli_query($db,$sql);
 			if ($run==true) {
 				echo '<script type="text/javascript">alert("User successfully added");window.location=\'users.php\';</script>';

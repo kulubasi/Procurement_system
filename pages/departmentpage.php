@@ -5,6 +5,21 @@ if(isset($_SESSION['$username'])){
     header('location:../index.php');
 }
 ?>
+<?php 
+ include("config.php");
+            $k =$_SESSION['$username'];
+            //$user  =$_SESSION['$username_j'];
+            $my_db ="SELECT * FROM   users WHERE username='".$k."'";
+            $ran=mysqli_query($db,$my_db);
+            if($ran == true){
+              
+                while($raw=mysqli_fetch_array($ran)){
+                    $m =$raw[10];
+                
+                $m =$raw[10];
+                
+            }}
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -248,13 +263,22 @@ if(isset($_SESSION['$username'])){
                       </div>
                     </div>
                     </div>
-                    <div class="col-sm-12">
+                    <div class="row">
+                    <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
                         <label>Department</label>
                         <input type="text" class="form-control" placeholder="Enter ..." name="department">
                       </div>
                     </div>
+                    <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label>company</label>
+                        <input type="text" class="form-control" placeholder="Enter ..." name="org" value="<?php echo$m; ?>">
+                      </div>
+                    </div>
+                  </div>
                   
                 </div>
             </div>

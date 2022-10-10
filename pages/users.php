@@ -5,6 +5,33 @@ if(isset($_SESSION['$username'])){
     header('location:../index.php');
 }
 ?>
+<?php 
+
+
+
+
+
+
+include("config.php");
+            $k =$_SESSION['$username'];
+            //$user  =$_SESSION['$username_j'];
+            $my_db ="SELECT * FROM   users WHERE username='".$k."'";
+            $ran=mysqli_query($db,$my_db);
+            if($ran == true){
+              
+                while($raw=mysqli_fetch_array($ran)){
+                    $m =$raw[10];
+                
+                $m =$raw[10];
+                
+            }}
+
+
+
+
+
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -224,6 +251,10 @@ if(isset($_SESSION['$username'])){
                     <label for="exampleInputEmail1">Code</label>
                     <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter Department Initial" name="cod" required>
                   </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Company</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Department Initial" name="org" value="<?php echo$m; ?>" required>
+                  </div>
                 
                 </div>
             </div>
@@ -258,9 +289,20 @@ if(isset($_SESSION['$username'])){
           </thead> 
           <tbody>
             <?php
+             include("config.php");
+            $k =$_SESSION['$username'];
             //$user  =$_SESSION['$username_j'];
-            include("config.php");
-            $mydb ="SELECT * FROM   users ";
+            $my_db ="SELECT * FROM   users WHERE username='".$k."'";
+            $ran=mysqli_query($db,$my_db);
+            if($ran == true){
+              
+                while($raw=mysqli_fetch_array($ran)){
+                    $m =$raw[10];
+                
+                $m =$raw[10];
+                
+            }}
+            $mydb ="SELECT * FROM   users WHERE org='".$m."'";
             $run=mysqli_query($db,$mydb);
             if($run == true){
               

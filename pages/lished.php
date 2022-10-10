@@ -214,9 +214,21 @@ if(isset($_SESSION['$username'])){
           </thead> 
           <tbody>
             <?php
-            //$user  =$_SESSION['$username_j'];
             include("config.php");
-            $mydb ="SELECT * FROM publish ";
+            $k =$_SESSION['$username'];
+            //$user  =$_SESSION['$username_j'];
+            $my_db ="SELECT * FROM   users WHERE username='".$k."'";
+            $ran=mysqli_query($db,$my_db);
+            if($ran == true){
+              
+                while($raw=mysqli_fetch_array($ran)){
+                    $m =$raw[10];
+                
+                $m =$raw[10];
+                
+            }}
+            //$user  =$_SESSION['$username_j'
+            $mydb ="SELECT * FROM publish WHERE org='".$m."'";
             $run=mysqli_query($db,$mydb);
             if($run == true){
               

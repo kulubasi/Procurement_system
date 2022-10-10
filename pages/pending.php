@@ -220,9 +220,22 @@ if(isset($_SESSION['$username'])){
           </thead> 
           <tbody>
             <?php
+             include("config.php");
+            $k =$_SESSION['$username'];
+            //$user  =$_SESSION['$username_j'];
+            $my_db ="SELECT * FROM   users WHERE username='".$k."'";
+            $ran=mysqli_query($db,$my_db);
+            if($ran == true){
+              
+                while($raw=mysqli_fetch_array($ran)){
+                    $m =$raw[10];
+                
+                $m =$raw[10];
+                
+            }}
             //$user  =$_SESSION['$username_j'];
             include("config.php");
-            $mydb ="SELECT * FROM   requests WHERE status ='' ";
+            $mydb ="SELECT * FROM   requests WHERE status ='' AND org ='".$m ."' ";
             $run=mysqli_query($db,$mydb);
             if($run == true){
               
