@@ -111,7 +111,7 @@ $mydb ="SELECT * FROM   suppliers WHERE username ='".$x."' ";
               <div class="form-group">
                 <input type="number" name="id" hidden value="Supply of <?php echo$c; ?>" >
                 <label>Tender</label>
-                <input type="text" name="tender" class="form-control" value="<?php echo"Supply of"." " .$c; ?>" >
+                <input type="text" name="tender" class="form-control" value="<?php echo"Supply of"." " .$f; ?>" >
 
               </div>
             </div>

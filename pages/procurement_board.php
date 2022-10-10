@@ -88,10 +88,10 @@ if(isset($_SESSION['$username'])){
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="../dist/img/FaceApp_1643357366584_1.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="../dist/img/FaceApp_164335766584_1.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Nkwine Innocent</a>
+          <a href="#" class="d-block">User</a>
         </div>
       </div>
 
@@ -128,11 +128,11 @@ if(isset($_SESSION['$username'])){
               <p>Published contracts
                   </p></a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <p>Awarded contracts
                   </p></a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a href="applications.php" class="nav-link">
               <p>Applications
@@ -144,7 +144,7 @@ if(isset($_SESSION['$username'])){
                   </p></a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="contractmgmt.php" class="nav-link">
               <p>Contracts management
                   </p></a>
           </li>

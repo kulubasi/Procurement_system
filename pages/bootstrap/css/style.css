@@ -240,9 +240,9 @@ main{
 
 /*start of stock manager styles*/
 
-.card:hover {
-  background-color: yellow;
-}
+/*.card:hover {
+  background-color: green;
+}*/
 /*end of stock manager styles*/
 
 /* css for show expense paragraph */
@@ -260,6 +260,11 @@ main{
 
 .awards{display: none;}
 .awards.active{display: block;}
+/*.contractform{display: none;}*/
+.contractform.active{display: block;}
+
+/*.contcheck{display: none;}*/
+/*.contcheck.active{display: block;}*/
 
 /*.avbids.active{display: none;}*/
 
