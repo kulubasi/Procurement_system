@@ -146,15 +146,15 @@ if(isset($_SESSION['$username'])){
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview ">
+          <!-- <li class="nav-item has-treeview ">
             <a href="" class="nav-link" id="availablebidstwigger">
               <i class="nav-icon fas fa-building"></i><p>Available bids
                   </p></a>
-          </li>
-          <li class="nav-item has-treeview">
+          </li> -->
+          <!-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link"><i class="nav-icon fas fa-clone"></i><p>Previous Contracts</p></a>
     
-          </li>
+          </li> -->
          
                   </ul>
       </nav>

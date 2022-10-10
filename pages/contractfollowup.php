@@ -151,18 +151,11 @@ if(isset($_SESSION['$username'])){
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview ">
-            <a href="" class="nav-link" id="availablebidstwigger">
-              <i class="nav-icon fas fa-building"></i><p>Available bids
-                  </p></a>
-          </li>
-          <li class="nav-item has-treeview" id="awardtwigger">
-            <a class="nav-link">
-              <i class="nav-icon fas fa-clone"></i><p>Awarded Contracts</p></a>
-          </li>
+          
+          
 
           <li class="nav-item has-treeview" id="contcheck">
-            <a href="contractfollowup.php" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-palette"></i>
               <p>
                 Contract Followup
@@ -331,91 +324,22 @@ if(isset($_SESSION['$username'])){
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <div class="col-lg-3 col-6 avbidstwigger" id="avbidstwigger">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3><i class="fa fa-users"></i> 0</h3>
-
-                <p>Available bids</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3><i class="fa fa-shopping-cart"></i>0</h3>
-
-                <p >Awarded Contracts</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <!-- <div class="col-lg-3 col-6">
-            small box
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3><i class="fa fa-cart-plus"></i>0</h3>
-
-                <p>Recieved items</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-person-add"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div> -->
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3><i class="fa fa-palette"></i> 0</h3>
-
-                <p>Contract Status</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-        </div>
-        <!-- /.row -->
-        <!-- Main row -->
-        
-      </div><!-- /.container-fluid -->
-    </section>
-
-    <!-- sectiontwiggeredby awardstwigger -->
-    <section class="awards" id="awards">
-      <div style="margin-left: 50px;">
-        <h3>Below are your current contracts</h3>
+          <section id="contcheck" class="contcheck">
+      <div>
+        <h3>Monitory Progress of Your Contract</h3>
         <table class="table table-striped" id="tb">
           <thead>
             <tr>
             <th>Id</th>
-            <th>Supplier name</th>
             <th>Tender</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Contact</th>
-            <th>Email</th>
-            <th>Phases</th>
+            <th>Supplier name</th>
+            
+            <th>Phase 1 feedback</th>
+            <th>Phase 2 feedback</th>
+            <th>Phase 3 feedback</th>
+            <th>Phase 4 feedback</th>
             <th>Official</th>
-            <th>Terms & Conditions</th>
-            <th>Date Awarded</th>
+
           </tr>
           </thead>
 
@@ -423,7 +347,6 @@ if(isset($_SESSION['$username'])){
             <?php
             include("config.php");
             $k =$_SESSION['$username'];
-            //$user  =$_SESSION['$username_j'];
             $suppdetails="SELECT * FROM suppliers WHERE username = '".$k."'";
             //$my_db ="SELECT * FROM   contract WHERE username='".$k."'";
             $ran=mysqli_query($db,$suppdetails);
@@ -432,7 +355,7 @@ if(isset($_SESSION['$username'])){
                 while($raw=mysqli_fetch_array($ran)){
                     $m =$raw[7];
 
-                    $mydb ="SELECT * FROM   contract WHERE sup ='".$m."'";
+                    $mydb ="SELECT * FROM   managecontract WHERE supname ='".$m."'";
                     $run=mysqli_query($db,$mydb);
                     if($run == true){
                       
@@ -445,10 +368,7 @@ if(isset($_SESSION['$username'])){
                             $f =$row[4];
                             $g =$row[6];
                             $h =$row[7];
-                            $i =$row[8];
-                            $j =$row[9];
-                            $k =$row[14];
-                            $l =$row[13];
+                            
                             
                             
                             
@@ -461,10 +381,7 @@ if(isset($_SESSION['$username'])){
                             echo'<td>' .$f.'</td>';
                             echo'<td>' .$g.'</td>';
                             echo'<td>' .$h.'</td>';
-                            echo'<td>' .$i.'</td>';
-                            // echo'<td>' .$j.'</td>';
-                            echo'<td>' .$l.'</td>';
-                            echo'<td>' .$k.'</td>';
+                            
                             // echo  '<td align="center" > <a  href="publish.php?id='.$a.'"  class="btn btn-primary btn-xs  "> Publish</a>  <a  href="\example\capston\project\look.php?id='.$a.'"  class="btn btn-danger btn-xs  "> Delete</a></td>';
                           echo '</tr>';
              
@@ -478,19 +395,22 @@ if(isset($_SESSION['$username'])){
                   }
            
             else{
-            echo "<h3 >There are no pedding requests</h3>". mysqli_error($db);
+            echo "<h3 >There have not been awarded any contract yet</h3>". mysqli_error($db);
             }
           
                   
             ?>
-          </tbody>
-        </table><br><br>
 
-        
       </div>
-      
-      
     </section>
+        </div>
+        <!-- /.row -->
+        <!-- Main row -->
+        
+      </div><!-- /.container-fluid -->
+    </section>
+
+    
 
     
 
@@ -544,13 +464,13 @@ if(isset($_SESSION['$username'])){
 
 
 
-  <footer class="main-footer">
+ <!--  <footer class="main-footer">
     <strong>Footer<a href="http://adminlte.io"></a>.</strong>
     
     <div class="float-right d-none d-sm-inline-block">
       
     </div>
-  </footer>
+  </footer> -->
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

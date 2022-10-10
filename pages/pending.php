@@ -128,11 +128,11 @@ if(isset($_SESSION['$username'])){
               <p>Published contracts
                   </p></a>
           </li>
-          <li class="nav-item">
+         <!--  <li class="nav-item">
             <a href="" class="nav-link">
               <p>Awarded contracts
                   </p></a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a href="applications.php" class="nav-link">
               <p>Applications
@@ -144,7 +144,7 @@ if(isset($_SESSION['$username'])){
                   </p></a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="contractmgmt.php" class="nav-link">
               <p>Contracts management
                   </p></a>
           </li>

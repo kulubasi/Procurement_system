@@ -90,7 +90,7 @@ if(isset($_SESSION['$username'])){
             echo$i; 
             echo'<h4>'."Other requirements".'</h4>';
             echo$j;
-            echo'<h4>'."Deadline for pender apllication".'</h4>';
+            echo'<h4>'."Deadline for tender apllication".'</h4>';
             echo$k;
             echo'<br/>';
             echo'<br/>';

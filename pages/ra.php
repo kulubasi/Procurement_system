@@ -46,10 +46,10 @@ if(isset($_SESSION['$username'])){
       <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="procurement_board.php">Home</a>><a href="bidding.php">bidding</a>><a href="pro.php">view suppliers</a>>supplier rating</li>
             </ol>
-      <div class="btn btn-primary">
       
-        <h3 class="card-title" align="center">Supplier rating</h3>
-      </div>
+      
+        <h1 class="card-title text-bold" align="center">Supplier rating</h1>
+      
    
                <table id="example1" class="table table-bordered table-striped">
                <thead>
