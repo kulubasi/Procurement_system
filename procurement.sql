@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2022 at 09:34 PM
+-- Generation Time: Oct 10, 2022 at 05:53 AM
 -- Server version: 10.4.24-MariaDB
--- PHP Version: 8.0.19
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -53,7 +53,8 @@ INSERT INTO `applications` (`id`, `a_id`, `tender`, `name`, `adress`, `person`, 
 (1, 3, 'chairs', 'Muni', 'Arua', 'John', 'Manager', 'nkwineinnocent5@gmail.com', '0785287421', 'NEGOTIATION STRATEGY AND PLANNING.pptx', 'TOPIC 2 (1).pptx', 'NATURE OF NEGOTIATION (1).pptx', '2022-09-21', '', 'Ugsh1000,000/='),
 (1, 4, 'chairs', 'Muni', 'Arua', 'John', 'manager', 'nkwineinnocent5@gmail.com', '0785287421', 'y2mate.com - Ebibi byangye Yesu Akabyekorera HYMN 185 Runyankole Rukiga Church Of Uganda (2).mp3', 'y2mate.com - 250 IRA NKABA NINGIRA NTIRUNYANKORERUKIGA HYMNS.mp3', 'y2mate.com - Ira kunabaire ngwejegiire Hati Igura Runyankole Rukiga Hymn with New English Lyrics Song.mp3', '2022-09-21', '', ''),
 (1, 5, 'chairs', 'Muni', 'Arua', 'John', 'manager', 'nkwineinnocent5@gmail.com', '0785287421', 'y2mate.com - Ebibi byangye Yesu Akabyekorera HYMN 185 Runyankole Rukiga Church Of Uganda (2).mp3', 'y2mate.com - 250 IRA NKABA NINGIRA NTIRUNYANKORERUKIGA HYMNS.mp3', 'y2mate.com - Ira kunabaire ngwejegiire Hati Igura Runyankole Rukiga Hymn with New English Lyrics Song.mp3', '2022-09-21', '', ''),
-(1, 6, 'chairs', 'Muni', 'Arua', 'John', 'V.C', '1901200153@muni.ac.ug', '0785287422', 'NEGOTIATION STRATEGY AND PLANNING.pptx', 'TOPIC 2 (1).pptx', 'NATURE OF NEGOTIATION (1).pptx', '2022-09-21', '', '');
+(1, 6, 'chairs', 'Muni', 'Arua', 'John', 'V.C', '1901200153@muni.ac.ug', '0785287422', 'NEGOTIATION STRATEGY AND PLANNING.pptx', 'TOPIC 2 (1).pptx', 'NATURE OF NEGOTIATION (1).pptx', '2022-09-21', '', ''),
+(0, 7, 'Supply of office chairs', 'Budimbo Express', 'Kikaaya B', 'Lillian Naluwagga', '', 'lilliann@gmail.com', '0765345232', '', '', '', '2022-10-09', 'lillian22', '');
 
 -- --------------------------------------------------------
 
@@ -84,7 +85,8 @@ CREATE TABLE `contract` (
 --
 
 INSERT INTO `contract` (`id`, `sup`, `tender`, `qty`, `price`, `contact`, `email`, `phase`, `official`, `phase1`, `phase2`, `phase3`, `phase4`, `term`, `dat`) VALUES
-(1, 'Muni', 'Supply of  chairs', '20	chairs', 'ugsh 5,000,000', '0785287422', '1901200153@muni.ac.ug', '3', 'Iga Isaac', '2022-10-10', '2022-10-10', '2022-10-10', '', 'The supplier must deliver on time', '2022-10-05');
+(1, 'Muni', 'Supply of  chairs', '20	chairs', 'ugsh 5,000,000', '0785287422', '1901200153@muni.ac.ug', '3', 'Iga Isaac', '2022-10-10', '2022-10-10', '2022-10-10', '', 'The supplier must deliver on time', '2022-10-05'),
+(2, 'Budimbo Express', 'Supply of  Supply of office chairs', '34', '500000', '0765345232', 'lilliann@gmail.com', '1', 'Iga Isaac', '2022-10-23', '', '', '', 'Deliver on time', '2022-10-09');
 
 -- --------------------------------------------------------
 
@@ -106,7 +108,33 @@ CREATE TABLE `feed` (
 --
 
 INSERT INTO `feed` (`id`, `sender`, `supplier`, `item`, `message`, `view`) VALUES
-(1, 'muni', '', 'chairs', 'We viewed your application please come to the head office with the original copies of the documents ', '');
+(1, 'muni', '', 'chairs', 'We viewed your application please come to the head office with the original copies of the documents ', ''),
+(2, 'muni', 'lillian22', '<br /><b>Warning</b>:  Undefined variable $z in <b>C:xampphtdocsProcurement_systempagesapplicationde', 'Lillian thanks for your appllication', 'yes');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `managecontract`
+--
+
+CREATE TABLE `managecontract` (
+  `id` int(50) NOT NULL,
+  `tender` varchar(50) NOT NULL,
+  `supname` varchar(50) NOT NULL,
+  `phase1` varchar(50) NOT NULL,
+  `phase2` varchar(50) NOT NULL,
+  `phase3` varchar(50) NOT NULL,
+  `phase4` varchar(50) NOT NULL,
+  `offname` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `managecontract`
+--
+
+INSERT INTO `managecontract` (`id`, `tender`, `supname`, `phase1`, `phase2`, `phase3`, `phase4`, `offname`) VALUES
+(3, 'Supply of  chairs', 'Muni', 'Not well accomplished', '', '', '', 'James Grant'),
+(4, 'Supply of  Supply of office chairs', 'Budimbo Express', 'Well done', '', '', '', 'Joseph Lugard');
 
 -- --------------------------------------------------------
 
@@ -160,7 +188,8 @@ CREATE TABLE `rating` (
 
 INSERT INTO `rating` (`id`, `name`, `tender`, `price`, `services`, `quality`, `requirements`, `comment`, `official`, `dat`) VALUES
 (2, 'Muni', 'supply of  chairs', 'ugsh 5,000,000', '3', '3', '2', 'The supplier is not good', 'Iga Isaac', '2022-10-02'),
-(3, '<br /><b>Warning</b>:  Undefined variable $i in <b>C:xampphtdocsProcurement_systempagesaward.php</b>', '', '', '', 'score', 'score', '', 'Iga Isaac', '2022-10-05');
+(3, '<br /><b>Warning</b>:  Undefined variable $i in <b>C:xampphtdocsProcurement_systempagesaward.php</b>', '', '', '', 'score', 'score', '', 'Iga Isaac', '2022-10-05'),
+(4, 'Budimbo Express', 'supply of  Supply of office chairs', 'lillian22', '1', '4', '4', 'jered', 'Iga Isaac thika', '2022-10-09');
 
 -- --------------------------------------------------------
 
@@ -211,7 +240,8 @@ CREATE TABLE `suppliers` (
 --
 
 INSERT INTO `suppliers` (`id`, `email`, `fname`, `lname`, `username`, `tel`, `pswd`, `comp`, `location`) VALUES
-(2, 'nkwineinnocent@gmail.com', 'Agaba', 'Amon', 'john', '0785287421', 'John@222', 'ICT Specialists', 'Arua');
+(2, 'nkwineinnocent@gmail.com', 'Agaba', 'Amon', 'john', '0785287421', 'John@222', 'ICT Specialists', 'Arua'),
+(4, 'lilliann@gmail.com', 'lillian', 'Naluwagga', 'lillian22', '0765345232', 'Lillian22', 'Budimbo Express', 'Kikaaya B');
 
 -- --------------------------------------------------------
 
@@ -302,6 +332,12 @@ ALTER TABLE `feed`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `managecontract`
+--
+ALTER TABLE `managecontract`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `publish`
 --
 ALTER TABLE `publish`
@@ -339,19 +375,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `applications`
 --
 ALTER TABLE `applications`
-  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `contract`
 --
 ALTER TABLE `contract`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `feed`
 --
 ALTER TABLE `feed`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `managecontract`
+--
+ALTER TABLE `managecontract`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `publish`
@@ -363,7 +405,7 @@ ALTER TABLE `publish`
 -- AUTO_INCREMENT for table `rating`
 --
 ALTER TABLE `rating`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `requests`
@@ -375,7 +417,7 @@ ALTER TABLE `requests`
 -- AUTO_INCREMENT for table `suppliers`
 --
 ALTER TABLE `suppliers`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
