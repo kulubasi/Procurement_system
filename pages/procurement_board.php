@@ -91,7 +91,7 @@ if(isset($_SESSION['$username'])){
           <img src="../dist/img/FaceApp_164335766584_1.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">User</a>
+          <a href="#" class="d-block"><?php echo 'Welcome '.$_SESSION['$username']; ?></a>
         </div>
       </div>
 

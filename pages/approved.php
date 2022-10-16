@@ -88,10 +88,10 @@ if(isset($_SESSION['$username'])){
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="../dist/img/FaceApp_1643357366584_1.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="../dist/img/FaeApp_1643357366584_1.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">user</a>
+          <a href="#" class="d-block"><?php echo 'Welcome '.$_SESSION['$username']; ?></a>
         </div>
       </div>
 
@@ -250,7 +250,7 @@ if(isset($_SESSION['$username'])){
                     echo'<td>' .$e.'</td>';
                     echo'<td>' .$f.'</td>';
                     echo'<td>' .$g.'</td>';
-                    echo  '<td align="center" > <a  href="publish.php?id='.$a.'"  class="btn btn-primary btn-xs  "> Publish</a>  <a  href="\example\capston\project\look.php?id='.$a.'"  class="btn btn-danger btn-xs  "> Delete</a></td>';
+                    echo  '<td align="center" > <a  href="publish.php?id='.$a.'"  class="btn btn-primary btn-xs  "> Publish</a> </td>';
                   echo '</tr>';
      
                 }

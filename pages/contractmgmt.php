@@ -90,10 +90,10 @@ if(isset($_SESSION['$username'])){
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="../dist/img/FaceApp_1643357366584_1.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="../dist/img/FaceApp_164335366584_1.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">user</a>
+          <a href="#" class="d-block"><?php echo 'Welcome '.$_SESSION['$username']; ?></a>
         </div>
       </div>
 
@@ -171,7 +171,7 @@ if(isset($_SESSION['$username'])){
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="contractmgmt.php">Home</a>>Contract Management</li>
+              <li class="breadcrumb-item"><a href="procurement_board.php">Home</a>>Contract Management</li>
             </ol>
             
           </div><!-- /.col -->
@@ -266,7 +266,7 @@ if(isset($_SESSION['$username'])){
                                 </div>
                                 <div class='mb-3'>
                                   <label for='exampleInputPassword1' class='form-label'>Name of Clearing Officer</label>
-                                  <input type='text' value='' name='offname' class='form-control' id='exampleInputPassword1'>
+                                  <input type='text' value='' name='offname' class='form-control' id='exampleInputPassword1' required>
                                 </div>
                                 
                                 <button type='submit' class='btn btn-primary' name='managetender'>Give feedback</button>
