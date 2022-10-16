@@ -92,7 +92,7 @@ if(isset($_SESSION['$username'])){
           <img src="../dist/img/FaceApp_164335736584_1.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block"></a>
+          <a href="#" class="d-block"><?php echo 'Welcome '.$_SESSION['$username']; ?></a>
         </div>
       </div>
 
@@ -109,19 +109,19 @@ if(isset($_SESSION['$username'])){
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview ">
+          <!-- <li class="nav-item has-treeview ">
             <a href="#" class="nav-link ">
               <i class="fa fa-massega"></i>
               <p>
                 Message
               </p>
             </a>
-          </li>
-          <li class="nav-item has-treeview ">
+          </li> -->
+          <!-- <li class="nav-item has-treeview ">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-building"></i><p>Department details
                   </p></a>
-          </li>
+          </li> -->
           <!-- <li class="nav-item has-treeview">
             <a href="proplan.php" class="nav-link"><i class="nav-icon fas fa-clone"></i><p>Profile</p></a>
     
@@ -152,14 +152,14 @@ if(isset($_SESSION['$username'])){
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview ">
+          <!-- <li class="nav-item has-treeview ">
             <a href="#" class="nav-link ">
               <i class="fas fa-inventory"></i>
               <p>
                 Recieved items
               </p>
             </a>
-          </li>
+          </li> -->
           
                   </ul>
       </nav>

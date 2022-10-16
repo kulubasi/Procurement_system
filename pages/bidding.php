@@ -153,15 +153,7 @@ if(isset($_SESSION['$username'])){
               <p>Recieved items
                   </p></a>
           </li> -->
-<<<<<<< HEAD
-                   
-=======
-          <!-- <li class="nav-item">
-            <a href="" class="nav-link">
-              <p>History
-                  </p></a>
-          </li> -->         
->>>>>>> c5e6cd11eccec296e26d63463842a9d2234f356c
+
                   </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -176,7 +168,7 @@ if(isset($_SESSION['$username'])){
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Tenders</h1>
+            <h1 class="m-0 text-dark">Tenders/ Bids</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -204,6 +196,7 @@ if(isset($_SESSION['$username'])){
             </div>
             <!-- /.card-header -->
             <div class="card-body">
+              <h4 class="text-center">Category of bids</h4>
 
               <table id="example1" class="table table-bordered table-striped">
                <thead>

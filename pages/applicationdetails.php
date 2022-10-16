@@ -176,7 +176,7 @@ if(isset($_SESSION['$username'])){
               <input hidden type="text" name="sender" value="<?php echo $n1;?>">
               <input hidden type="text" name="supplier" value="<?php echo $d;?>">
               <input hidden type="text" name="supplier" value="<?php echo $d;?>">
-              <input  type="tex" name="item" value="<?php echo $z;?>">
+              <input  type="text" name="item" value="<?php echo $z;?>">
               <textarea class="form-control" name="remarks"></textarea>
               <input class="btn btn-primary" type="submit" name="send" value="send">
             </form>

@@ -228,9 +228,9 @@ if(isset($_SESSION['$username'])){
 
                    echo '<div class="col-6"><div class="card ">
                           <div class="card-body">
-                            <h5 class="card-title text-center">'.$c.'</h5>
+                            <h5 class="card-title text-center text-bold text-success">'.$c.'</h5>
                             <p class="card-text">Applied for the tender to supply '.$b.'</p>
-                            <a href="applicationdetails.php?id='.$x.'&bid='.$a.'" class="btn btn-primary">View Details</a>
+                            <a href="applicationdetails.php?id='.$x.'&bid='.$a.'" class="btn btn-danger">View Details</a>
                           </div>
                         </div></div>';
 

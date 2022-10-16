@@ -152,14 +152,14 @@ if(isset($_SESSION['$username'])){
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview ">
+          <!-- <li class="nav-item has-treeview ">
             <a href="#" class="nav-link ">
               <i class="fas fa-inventory"></i>
               <p>
                 Recieved items
               </p>
             </a>
-          </li>
+          </li> -->
           
                   </ul>
       </nav>

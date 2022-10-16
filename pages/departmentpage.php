@@ -107,7 +107,7 @@ if(isset($_SESSION['$username'])){
           <img src="../dist/img/FaceApp_164357366584_1.jpg" class="img-circle elevation-2 text-white" alt="User Image">
         </div>
         <div class="info">
-           <a href="#" class="d-block"><?php $a =$_SESSION['$username']; echo $a; ?></a>
+           <a href="#" class="d-block"><?php echo 'Welcome '.$_SESSION['$username']; ?></a>
         </div>
       </div>
 
@@ -132,11 +132,11 @@ if(isset($_SESSION['$username'])){
               </p>
             </a>
           </li> -->
-          <li class="nav-item has-treeview ">
+          <!-- <li class="nav-item has-treeview ">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-building"></i><p>Department details
                   </p></a>
-          </li>
+          </li> -->
           <!-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link"><i class="nav-icon fas fa-clone"></i><p>Profile</p></a>
     

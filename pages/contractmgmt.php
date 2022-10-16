@@ -111,6 +111,7 @@ if(isset($_SESSION['$username'])){
             </a>
           </li>
           <li class="nav-item">
+            <i class="bi bi-check-all"></i>
             <a href="pending.php" class="nav-link ">
               <p>Pending requests
                   </p></a>
