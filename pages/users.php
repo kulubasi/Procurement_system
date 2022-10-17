@@ -127,10 +127,10 @@ include("config.php");
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-           <li class="nav-item has-treeview">
+           <!-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link"><i class="nav-icon fas fa-clone"></i><p>Profile</p></a>
     
-          </li>
+          </li> -->
           <li class="nav-item has-treeview ">
             <a href="#" class="nav-link ">
               <i class="fa fa-massega"></i>
@@ -149,12 +149,12 @@ include("config.php");
           </li>
           
           <li class="nav-item has-treeview ">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-building"></i><p>Manage Departments
                   </p></a>
           </li>
          
-          <li class="nav-item has-treeview">
+          <!-- <li class="nav-item has-treeview">
             <a href="users.php" class="nav-link active">
               <i class="nav-icon fas fa-palette"></i>
               <p>
@@ -162,7 +162,7 @@ include("config.php");
                 </i>
               </p>
             </a>
-          </li>
+          </li> -->
                   </ul>
       </nav>
       <!-- /.sidebar-menu -->

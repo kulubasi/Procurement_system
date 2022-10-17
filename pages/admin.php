@@ -123,12 +123,12 @@ if(isset($_SESSION['$username'])){
           </li>
           
           <li class="nav-item has-treeview ">
-            <a href="#" class="nav-link">
+            <a href="users.php" class="nav-link">
               <i class="nav-icon fas fa-building"></i><p>Manage Departments
                   </p></a>
           </li>
          
-          <li class="nav-item has-treeview">
+          <!-- <li class="nav-item has-treeview">
             <a href="users.php" class="nav-link">
               <i class="nav-icon fas fa-palette"></i>
               <p>
@@ -136,7 +136,7 @@ if(isset($_SESSION['$username'])){
                 </i>
               </p>
             </a>
-          </li>
+          </li> -->
          
           
                   </ul>

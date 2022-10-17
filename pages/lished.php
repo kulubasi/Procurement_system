@@ -148,16 +148,16 @@ if(isset($_SESSION['$username'])){
               <p>Contracts management
                   </p></a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <p>Recieved items
                   </p></a>
-          </li>
-          <li class="nav-item">
+          </li> -->
+          <!-- <li class="nav-item">
             <a href="department.php" class="nav-link">
               <p>History
                   </p></a>
-          </li>         
+          </li>   -->       
                   </ul>
       </nav>
       <!-- /.sidebar-menu -->
