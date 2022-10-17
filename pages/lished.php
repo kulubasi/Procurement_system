@@ -262,7 +262,7 @@ if(isset($_SESSION['$username'])){
             </tbody>
         </table> <br>
 
-        <button class="btn btn-primary" onclick="tableToCSV()">Export to CSV</button> 
+        <button class="btn btn-danger" onclick="tableToCSV()">Export to CSV</button> 
               <div class="modal fade show" id="edit" aria-modal="true">
         <div class="modal-dialog modal-sm">
 

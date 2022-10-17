@@ -110,11 +110,13 @@ if(isset($_SESSION['$username'])){
           </li>
           <li class="nav-item">
             <a href="pending.php" class="nav-link">
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
               <p>Pending requests
                   </p></a>
           </li>
           <li class="nav-item">
             <a href="approved.php" class="nav-link ">
+              <i class="fa fa-check" aria-hidden="true"></i>
               <p>Approved requests
                   </p></a>
           </li>
@@ -125,6 +127,7 @@ if(isset($_SESSION['$username'])){
           </li> -->
           <li class="nav-item">
             <a href="lished.php" class="nav-link">
+              <i class="fa fa-users" aria-hidden="true"></i>
               <p>Published contracts
                   </p></a>
           </li>
@@ -135,16 +138,19 @@ if(isset($_SESSION['$username'])){
           </li> -->
           <li class="nav-item">
             <a href="applications.php" class="nav-link">
+              <i class="fa fa-film" aria-hidden="true"></i>
               <p>Applications
                   </p></a>
           </li>
           <li class="nav-item">
             <a href="bidding.php" class="nav-link">
+              <i class="fa fa-binoculars" aria-hidden="true"></i>
               <p>Bidding
                   </p></a>
           </li>
           <li class="nav-item">
             <a href="contractmgmt.php" class="nav-link">
+              <i class="fa fa-binoculars" aria-hidden="true"></i>
               <p>Contracts management
                   </p></a>
           </li>

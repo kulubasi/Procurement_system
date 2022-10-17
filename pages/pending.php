@@ -110,11 +110,13 @@ if(isset($_SESSION['$username'])){
           </li>
           <li class="nav-item">
             <a href="pending.php" class="nav-link active">
-              <p>Pending requests
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+              <p>  Pending requests
                   </p></a>
           </li>
           <li class="nav-item">
             <a href="approved.php" class="nav-link">
+              <i class="fa fa-check" aria-hidden="true"></i>
               <p>Approved requests
                   </p></a>
           </li>
@@ -125,6 +127,7 @@ if(isset($_SESSION['$username'])){
           </li> -->
           <li class="nav-item">
             <a href="lished.php" class="nav-link">
+              <i class="fa fa-users" aria-hidden="true"></i>
               <p>Published contracts
                   </p></a>
           </li>
@@ -135,33 +138,29 @@ if(isset($_SESSION['$username'])){
           </li> -->
           <li class="nav-item">
             <a href="applications.php" class="nav-link">
+              <i class="fa fa-film" aria-hidden="true"></i>
               <p>Applications
                   </p></a>
           </li>
           <li class="nav-item">
             <a href="bidding.php" class="nav-link">
+              <i class="fa fa-binoculars" aria-hidden="true"></i>
               <p>Bidding
                   </p></a>
           </li>
           <li class="nav-item">
             <a href="contractmgmt.php" class="nav-link">
+              <i class="fa fa-binoculars" aria-hidden="true"></i>
               <p>Contracts management
                   </p></a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="" class="nav-link">
               <p>Recieved items
                   </p></a>
-          </li>
-<<<<<<< HEAD
-               
-=======
-          <li class="nav-item">
-            <a href="" class="nav-link">
-              <p>History
-                  </p></a>
-          </li>         
->>>>>>> c5e6cd11eccec296e26d63463842a9d2234f356c
+          </li> -->
+
+         
                   </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -270,7 +269,7 @@ if(isset($_SESSION['$username'])){
               
             </tbody>
         </table><br>
-        <button class="btn btn-primary" onclick="tableToCSV()">Export to CSV</button> 
+        <button class="btn btn-danger" onclick="tableToCSV()">Export to CSV</button> 
 
               <div class="modal fade show" id="edit" aria-modal="true">
         <div class="modal-dialog modal-sm">
