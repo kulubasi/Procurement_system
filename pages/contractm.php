@@ -33,6 +33,8 @@ if(isset($_SESSION['$username'])){
   <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- my styling -->
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/style.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -88,7 +90,7 @@ if(isset($_SESSION['$username'])){
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="../dist/img/FaceApp_1643357 366584_1.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="../dist/img/FaceApp_164335366584_1.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block"><?php echo 'Welcome '.$_SESSION['$username']; ?></a>
@@ -109,27 +111,28 @@ if(isset($_SESSION['$username'])){
             </a>
           </li>
           <li class="nav-item">
+            <i class="bi bi-check-all"></i>
             <a href="pending.php" class="nav-link ">
               <p>Pending requests
                   </p></a>
           </li>
-          <li class="nav-item">
-            <a href="approved.php" class="nav-link">
+          <li class="nav-item active">
+            <a href="approved.php" class="nav-link ">
               <p>Approved requests
                   </p></a>
           </li>
           <!-- <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="department.php" class="nav-link">
               <p>Postponed requests
                   </p></a>
           </li> -->
           <li class="nav-item">
-            <a href="lished.php" class="nav-link active">
+            <a href="lished.php" class="nav-link">
               <p>Published contracts
                   </p></a>
           </li>
           <!-- <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="department.php" class="nav-link">
               <p>Awarded contracts
                   </p></a>
           </li> -->
@@ -139,25 +142,18 @@ if(isset($_SESSION['$username'])){
                   </p></a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="bidding.php" class="nav-link">
               <p>Bidding
                   </p></a>
           </li>
           <li class="nav-item">
-            <a href="contractm.php" class="nav-link">
+            <a href="contractmgmt.php" class="nav-link active">
               <p>Contracts management
                   </p></a>
           </li>
-          <!-- <li class="nav-item">
-            <a href="#" class="nav-link">
-              <p>Recieved items
-                  </p></a>
-          </li> -->
-          <!-- <li class="nav-item">
-            <a href="department.php" class="nav-link">
-              <p>History
-                  </p></a>
-          </li>   -->       
+          
+          
+                   
                   </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -172,11 +168,11 @@ if(isset($_SESSION['$username'])){
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Published requests</h1>
+            <h1 class="m-0 text-dark">Contracts</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="procurement_board.php">Home</a>>approved requests</li>
+              <li class="breadcrumb-item"><a href="procurement_board.php">Home</a>>Contract Management</li>
             </ol>
             
           </div><!-- /.col -->
@@ -200,16 +196,18 @@ if(isset($_SESSION['$username'])){
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-            
+            <h4>awarded Contracts</h4><br>
+
               <table id="example1" class="table table-bordered table-striped">
                <thead>
             <tr>
-              <th>Item id</th>
-              <th>Item name</th>
-              <th>Quantity</th>
-              <th> Type</th>
-              <th>Deadline for submission</th>
-              <th>View details</th>
+              <th>Contract id</th>
+              <th>Tender</th>
+              <th>Supplier</th>
+              <th> Quantity</th>
+              <th>Unit price(Ugshillings)</th>
+              <th>Total amount(Ugshillings)</th>
+              <th>Action</th>
             </tr> 
           </thead> 
           <tbody>
@@ -228,19 +226,17 @@ if(isset($_SESSION['$username'])){
                 
             }}
             //$user  =$_SESSION['$username_j'
-            $mydb ="SELECT * FROM publish WHERE org='".$m."'";
+            $mydb ="SELECT * FROM contract WHERE org='".$m."'";
             $run=mysqli_query($db,$mydb);
             if($run == true){
               
                 while($row=mysqli_fetch_array($run)){
                     $a =$row[0];
                     $b=$row[2];
-                    $c  =$row[3];
-                    $d =$row[4];
-                    $e =$row[10];
-                    $f =$row[4];
-                    $g =$row[7];
-                    
+                    $c  =$row[1];
+                    $d =$row[3];
+                    $e =$row[4];
+                    $f =$d*$e;                  
                     
                   echo '<tr>';
                     echo'<td>' . $a.'</td>';
@@ -248,7 +244,8 @@ if(isset($_SESSION['$username'])){
                     echo'<td>' .$c.'</td>';
                     echo'<td>' .$d.'</td>';
                     echo'<td>' .$e.'</td>';
-                    echo  '<td align="center" > <a title="View details"   href="details.php?id='.$a.'"  class="btn btn-primary btn-xm  ">  <i class="fa fa-eye"></i></a>  </td>';
+                    echo'<td>' .$f.'</td>';
+                    echo  '<td align="center" > <a  href="contractmgmt.php?id='.$a.'"  class="btn btn-primary btn-xm  ">  Manage</a>  </td>';
                   echo '</tr>';
      
                 }
@@ -260,12 +257,51 @@ if(isset($_SESSION['$username'])){
             ?>
               
             </tbody>
-        </table> <br>
+        </table>
 
-        <button class="btn btn-danger" onclick="tableToCSV()">Export to CSV</button> 
+
+           
+
+            </div>
+
+
+            
+               <br>
+        <!-- <button class="btn btn-primary" onclick="tableToCSV()">Export to CSV</button> -->
               <div class="modal fade show" id="edit" aria-modal="true">
         <div class="modal-dialog modal-sm">
-
+              <form role="form">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="card card-warning">
+              <div class="card-header">
+                <h3 class="card-title">Edit Department</h3>
+              </div>
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Department Initial</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Department Initial">
+                  </div>
+                  
+                  <div class="form-group">
+                        <label>Description</label>
+                        <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                      </div>
+                </div>
+            </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+          </div>
+              </form>
+        </div>
         <!-- /.modal-dialog -->
       </div>
             </div>
@@ -332,7 +368,7 @@ if(isset($_SESSION['$username'])){
 <script src="../dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
-+<script type="text/javascript">
+<script type="text/javascript">
         function tableToCSV() {
  
             // Variable to store the final csv data
@@ -392,6 +428,23 @@ if(isset($_SESSION['$username'])){
             temp_link.click();
             document.body.removeChild(temp_link);
         }
+    </script>
+
+    <script type="text/javascript">
+      let contracttwigger = document.getElementById('contracttwigger');
+      let contractform = document.getElementById('contractform');
+      
+      
+
+      contracttwigger.addEventListener('click',(e)=>{
+        e.preventDefault();
+        contractform.classList.add('active')
+        // supphome.classList.add('active')
+        // awards.classList.remove('active')
+        // document.body.classList.add('overflow')
+      });
+
+
     </script>
 </body>
 </html>

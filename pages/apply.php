@@ -62,7 +62,7 @@ if(isset($_SESSION['$username'])){
         while($row=mysqli_fetch_array($run)){
             $a =$row[0];
             $b1=$row[1];
-            $c  =$row[2];
+            $c1  =$row[2];
             $d =$row[3];
             $e =$row[5];
             $f =$row[4];
@@ -111,7 +111,7 @@ $mydb ="SELECT * FROM   suppliers WHERE username ='".$x."' ";
               <div class="form-group">
                 <input type="number" name="id" hidden value="Supply of <?php echo$c; ?>" >
                 <label>Tender</label>
-                <input type="text" name="tender" class="form-control" value="<?php echo"Supply of"." " .$f; ?>" >
+                <input type="text" name="tender" class="form-control" value="<?php echo"Supply of"." " .$c1; ?>" >
 
               </div>
             </div>

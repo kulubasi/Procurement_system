@@ -72,9 +72,10 @@ if(isset($_SESSION['$username'])){
               
             <?php
             //$user  =$_SESSION['$username_j'];
-            $x = "supply of "." ".$_GET['pro'];
+            $x =  $_GET['pro'];
             $y = $_GET['app'];
             include("config.php");
+            
             $mydb ="SELECT * FROM  rating WHERE tender ='".$x."' AND name ='".$y."' ";
             $run=mysqli_query($db,$mydb);
             if($run == true){
@@ -94,7 +95,7 @@ if(isset($_SESSION['$username'])){
                     $n+=1;
                       echo '<tr>';
                     echo'<td>' . $n.'</td>';
-                    echo'<td>'."supply of "." ".$a.'</td>';
+                    echo'<td>'.$a.'</td>';
                     echo'<td>' .$b.'</td>';
                     echo'<td>' .$c.'</td>';
                     echo'<td>' .$d.'</td>';

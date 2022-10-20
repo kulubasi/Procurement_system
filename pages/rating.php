@@ -117,7 +117,7 @@ if(isset($_SESSION['$username'])){
                 <label>Tender:</label>
               </div>
               <div class="col-sm-4">
-                <input type="text" name="tender" class="form-control" value="<?php echo"supply of "." ". $c; ?>" >
+                <input type="text" name="tender" class="form-control" value="<?php echo $c; ?>" >
               </div>
               <div class="col-sm-3">
              </div>

@@ -144,7 +144,7 @@ if(isset($_SESSION['$username'])){
                   </p></a>
           </li>
           <li class="nav-item">
-            <a href="contractmgmt.php" class="nav-link">
+            <a href="contractm.php" class="nav-link">
               <p>Contracts management
                   </p></a>
           </li>

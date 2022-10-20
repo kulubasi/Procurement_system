@@ -114,7 +114,7 @@ if(isset($_SESSION['$username'])){
                   </p></a>
           </li>
           <li class="nav-item active">
-            <a href="approved.php" class="nav-link active">
+            <a href="contractm.php" class="nav-link active">
               <p>Approved requests
                   </p></a>
           </li>

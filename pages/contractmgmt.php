@@ -117,7 +117,7 @@ if(isset($_SESSION['$username'])){
                   </p></a>
           </li>
           <li class="nav-item active">
-            <a href="approved.php" class="nav-link active">
+            <a href="approved.php" class="nav-link">
               <p>Approved requests
                   </p></a>
           </li>
@@ -147,7 +147,7 @@ if(isset($_SESSION['$username'])){
                   </p></a>
           </li>
           <li class="nav-item">
-            <a href="contractmgmt.php" class="nav-link">
+            <a href="contractm.php" class="nav-link">
               <p>Contracts management
                   </p></a>
           </li>
@@ -202,42 +202,36 @@ if(isset($_SESSION['$username'])){
             <?php
             include("config.php");
             $k =$_SESSION['$username'];
+            $y =$_GET['id'];
             //$user  =$_SESSION['$username_j'];
-            $contracts="SELECT * FROM contract ";
-            //$my_db ="SELECT * FROM   contract WHERE username='".$k."'";
-            $ran=mysqli_query($db,$contracts);
-            if($ran == true){
+
+            $mydb ="SELECT * FROM   contract WHERE id ='".$y."'";
+            $run=mysqli_query($db,$mydb);
+            if($run == true){
               
-                while($raw=mysqli_fetch_array($ran)){
-                    $m =$raw[1];
+                while($row=mysqli_fetch_array($run)){
+                    $a =$row[0];
+                    $b=$row[1];
+                    $c  =$row[2];
+                    $d =$row[3];
+                    $f =$row[4];
+                    $e =$row[5];
+                    $g =$row[6];
+                    $h =$row[7];
+                    $i =$row[8];
+                    $j =$row[9];
+                    $k =$row[10];
+                    $l =$row[11];
+                    $m =$row[12];
+                    $n =$row[13];
+                    $o =$row[14];
+                    
 
-                    $mydb ="SELECT * FROM   contract WHERE sup ='".$m."'";
-                    $run=mysqli_query($db,$mydb);
-                    if($run == true){
-                      
-                        while($row=mysqli_fetch_array($run)){
-                            $a =$row[0];
-                            $b=$row[1];
-                            $c  =$row[2];
-                            $d =$row[3];
-                            $f =$row[4];
-                            $e =$row[5];
-                            $g =$row[6];
-                            $h =$row[7];
-                            $i =$row[8];
-                            $j =$row[9];
-                            $k =$row[10];
-                            $l =$row[11];
-                            $m =$row[12];
-                            $n =$row[13];
-                            $o =$row[14];
-                            
+                    echo "<h5>".$a."     Contract : ".$c." by ".$b."</h5>"."
+                     <br><br>";
 
-                            echo "<h5>".$a."     Contract of ".$c." by ".$b."</h5>"."
-                             <br><br>";
-
-                            echo "<form method='post' class='contractform'>
-                                <div class='mb-3'>
+                    echo "<form method='post' class='contractform'>
+                        <div class='mb-3'>
                                   <label for='exampleInputEmail1' class='form-label'>Tender</label>
                                   <input type='text' name='tender' value='$c' class='form-control' id='exampleInputEmail1' aria-describedby='emailHelp'>
                                   
@@ -292,12 +286,7 @@ if(isset($_SESSION['$username'])){
                         }
                  
                     }
-                        
-
-                        
-                    }
-                  }
-           
+                                   
             else{
             echo "<h3 >There are no current Contracts</h3>". mysqli_error($db);
             }

@@ -37,19 +37,21 @@ if(isset($_SESSION['$username'])){
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body>
-  
+   
  
 <div style="margin-right: 100px; margin-left: 100px">
               <?php
   $z = $_GET['ap'];
   $t = $_GET['td'];
+  $q =substr($t, 10);
   include("config.php");
-    $mydb ="SELECT * FROM   publish WHERE item ='".$t."' ";
+    $mydb ="SELECT * FROM   publish WHERE item ='".$q."' ";
     $run=mysqli_query($db,$mydb);
     if($run == true){
         while($row=mysqli_fetch_array($run)){
             
-            $r =$row[3];  
+            $r =$row[3]; 
+            
 
          }
      } 
@@ -84,7 +86,7 @@ if(isset($_SESSION['$username'])){
         while($row=mysqli_fetch_array($run)){
             $n1=$row[1];
             $n2  =$row[2];
-            echo$n1;
+            
             }}
 
     ?>
@@ -111,7 +113,7 @@ if(isset($_SESSION['$username'])){
                 <label>Tender:</label>
               </div>
               <div class="col-sm-4">
-                <input type="text" name="tender" class="form-control" value="<?php echo "Supply of "." ".$t; ?>" >
+                <input type="text" name="tender" class="form-control" value="<?php echo $t; ?>" >
               </div>
               <div class="col-sm-3">
              </div>
@@ -126,7 +128,7 @@ if(isset($_SESSION['$username'])){
                 <label>Quantity</label>
               </div>
               <div class="col-sm-4">
-                <input name="qty" type="text" class="form-control" value="<?php echo $r."".$t; ?>" >
+                <input name="qty" type="text" class="form-control" value="<?php echo $r; ?>" >
               </div>
               <div class="col-sm-3">
              </div>

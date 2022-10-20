@@ -17,6 +17,8 @@ if(isset($_SESSION['$username'])){
                     $m =$raw[10];
                 
                 $m =$raw[10];
+                $y =$raw[3];
+                $x =$raw[1];
                 
             }}
  ?>
@@ -252,14 +254,14 @@ if(isset($_SESSION['$username'])){
                       <!-- text input -->
                       <div class="form-group">
                         <label>Date Processed</label>
-                        <input type="date" class="form-control" placeholder="00.00" name="dat">
+                        <input type="" class="form-control" name="dat" value="<?php echo date("Y-m-d")?>">
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <!-- text input -->
                       <div class="form-group">
                         <label>Processed By</label>
-                        <input type="text" class="form-control" placeholder="Enter ..." name="processor">
+                        <input type="text" class="form-control" value="<?php echo$x; ?>" name="processor">
                       </div>
                     </div>
                     </div>
@@ -268,7 +270,7 @@ if(isset($_SESSION['$username'])){
                       <!-- text input -->
                       <div class="form-group">
                         <label>Department</label>
-                        <input type="text" class="form-control" placeholder="Enter ..." name="department">
+                        <input type="text" class="form-control" name="department" value="<?php echo$y; ?>">
                       </div>
                     </div>
                     <div class="col-sm-6">

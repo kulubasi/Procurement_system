@@ -1,11 +1,10 @@
 
 
 <?php
-
 session_start();
-if(isset($_SESSION['$username_j'])){
+if(isset($_SESSION['$username'])){
 }else{
-    header('location:../home.php');
+    header('location:../index.php');
 }
 ?>
 
