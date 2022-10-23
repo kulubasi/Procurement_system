@@ -124,7 +124,7 @@ if(isset($_SESSION['$username'])){
           
           <li class="nav-item has-treeview ">
             <a href="users.php" class="nav-link">
-              <i class="nav-icon fas fa-building"></i><p>Manage Departments
+              <i class="nav-icon fas fa-building"></i><p>Manage Users
                   </p></a>
           </li>
          

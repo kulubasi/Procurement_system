@@ -222,6 +222,7 @@ if(isset($_SESSION['$username'])){
         <!-- Small boxes (Stat box) -->
         
             <?php
+            error_reporting(0);
             include("config.php");
             $k =$_SESSION['$username'];
                 //$user  =$_SESSION['$username_j'];

@@ -10,6 +10,7 @@
         $email=$_POST['email'];
         $password=$_POST['password'];
         $rppassword=$_POST['rppassword'];
+        $user=$_POST['user'];
         
         $allowed = array('png','jpg','jpeg');
         $file_name= $_FILES['oimg']['name'];
@@ -29,11 +30,13 @@
               $fileDestination='files/'.$fileNameNew;
               move_uploaded_file($file_temp, $fileDestination);
               // header("Location:../login.php?uploadsuccess");
+              $sq = "INSERT INTO users (`fname`,`lname`,`department`,`position`,`email`,`contact`,`username`,`password`,`cod`,`org`) VALUES ('$fname','$lname','','','$email','$tel','$user','$password',3,'$oname')";
+              $q=mysqli_query($db,$sq);
               $sql = "INSERT INTO organizations (`oname`, `oimage`,`fname`,`lname`,`tel`,`email`,`pswd`,`rp`) VALUES ('$oname', '$fileNameNew','$fname','$lname', '$tel', '$email','$password','$rppassword')";
 
               if (mysqli_query($db, $sql)) {
                 echo "Organization details added successfully";
-                echo "<script>window.location.href='../index.php';</script>";
+                echo "<script>window.location.href='admin.php';</script>";
                 //header('Location:managerhome.php');
                 //exit();
               } 
@@ -156,6 +159,15 @@
             </div>
           </div>
         </div>
+        
+          <div class="input-group mb-3">
+          <input type="text" class="form-control" name="user" placeholder="username" required>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-use"></span>
+            </div>
+          </div>
+        </div>
         <!-- <div class="input-group mb-3">
           
           <select name="category" id="cars" class="form-control" required>
@@ -198,7 +210,7 @@
         </button>
       
       </div> <br>
-      <p class="text-center">Already have an account! <a href="../index.php">Login</a></p>
+      <!-- <p class="text-center">Already have an account! <a href="../index.php">Login</a></p> -->
 
     </div>
           </form>

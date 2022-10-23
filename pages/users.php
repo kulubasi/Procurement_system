@@ -150,7 +150,7 @@ include("config.php");
           
           <li class="nav-item has-treeview ">
             <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-building"></i><p>Manage Departments
+              <i class="nav-icon fas fa-building"></i><p>Manage Users
                   </p></a>
           </li>
          
@@ -249,7 +249,16 @@ include("config.php");
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Code</label>
-                    <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter Department Initial" name="cod" required>
+                     <select  class="form-select" aria-label="Default select example" name="cod">
+                        <option>score</option>
+                      <?php 
+                        $marks = range(1, 2);
+                        foreach ($marks as $mark) {
+                        echo '<option value='.$mark.'>'.$mark.'</option>';
+                        }
+                      ?>
+                      </select>
+                    
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Company</label>
