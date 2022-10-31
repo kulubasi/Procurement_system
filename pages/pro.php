@@ -67,8 +67,10 @@ if(isset($_SESSION['$username'])){
               
             <?php
             //$user  =$_SESSION['$username_j'];
+            $x = $_GET['pro'];
+            $y ="supply of ".$x;
             include("config.php");
-            $mydb ="SELECT * FROM   applications";
+            $mydb ="SELECT * FROM   applications WHERE tender ='".$y."'";
             $run=mysqli_query($db,$mydb);
             if($run == true){
               $n =0;
