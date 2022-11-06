@@ -257,7 +257,8 @@ if(isset($_SESSION['$username'])){
             ?>
               
             </tbody>
-        </table>
+        </table><br>
+        <button class="btn btn-danger" onclick="tableToCSV()">Export to CSV</button>
 
 
            
@@ -383,7 +384,7 @@ if(isset($_SESSION['$username'])){
  
                 // Stores each csv row data
                 var csvrow = [];
-                for (var j = 0; j < cols.length; j++) {
+                for (var j = 0; j < cols.length-1; j++) {
  
                     // Get the text data of each cell
                     // of a row and push it to csvrow
