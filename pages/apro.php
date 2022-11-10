@@ -261,6 +261,11 @@ if(isset($_SESSION['$username'])){
             }else{
             echo "<h3 >There are no pedding requests</h3>". mysqli_error($db);
             }
+            // $_SESSION['approved_rqst'];
+            $mydb = "SELECT * FROM requests WHERE status ='approved'";
+            $run = mysqli_query($db,$mydb) or die($mysqli_error);
+            $count=mysqli_num_rows($run);
+            echo $count;
                   
             ?>
               

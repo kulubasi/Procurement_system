@@ -19,7 +19,9 @@ if(isset($_SESSION['$username'])){
                 $m =$raw[10];
                 $y =$raw[3];
                 $x =$raw[1];
-                
+
+        
+
             }}
  ?>
 <!DOCTYPE html>
@@ -342,6 +344,7 @@ if(isset($_SESSION['$username'])){
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
+                <!-- .$_SESSION['approved_rqst']; -->
               </div>
               <a href="apro.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
