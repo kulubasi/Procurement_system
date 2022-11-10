@@ -106,7 +106,7 @@ if(isset($_SESSION['$username'])){
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="../dist/img/FaceApp_164357366584_1.jpg" class="img-circle elevation-2 text-white" alt="User Image">
+          <img src="../dist/img/user_icon.png" class="img-circle elevation-2 text-white" alt="User Image">
         </div>
         <div class="info">
            <a href="#" class="d-block"><?php echo 'Welcome '.$_SESSION['$username']; ?></a>
