@@ -264,7 +264,7 @@ if(isset($_SESSION['$username'])){
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Footer<a href="http://adminlte.io"></a>.</strong>
+    <strong> <a href="http://adminlte.io"></a>.</strong>
     
     <div class="float-right d-none d-sm-inline-block">
       
