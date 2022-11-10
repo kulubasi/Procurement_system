@@ -79,7 +79,7 @@ if(isset($_SESSION['$username'])){
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <span class="brand-text font-weight-light"><h2 align="center"><strong>Procurement</strong></h2></span>
+      <span class="brand-text font-weight-light"><h2 align="center"> <a href="#"><strong>Procurement</strong></a></h2></span>
 
     </a>
 
