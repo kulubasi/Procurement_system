@@ -96,7 +96,7 @@ if (isset($_SESSION['$username'])) {
                           echo '<td>' . $d . '</td>';
                           echo '<td>' . $h . '</td>';
                           echo '<td>' . $e . '</td>';
-                          echo '<td>' . $f . $g . $i .'</td>';
+                          echo '<td>' . $f .'<br/>'. $g .'<br/>'. $i .'</td>';
                           // echo '<td>' . $g . '</td>';
                           // echo '<td>' . $i . '</td>';
                           echo '<td>' . $j . '</td>';
