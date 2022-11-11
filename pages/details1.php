@@ -53,60 +53,12 @@ if(isset($_SESSION['$username'])){
         <h3 class="card-title" align="center">Publish items requests</h3>
       </div>
         <div class="card-body">
-<?php 
-  $a = $_GET['id'];
-  include("config.php");
-    $mydb ="SELECT * FROM   publish WHERE id ='".$a."' ";
-    $run=mysqli_query($db,$mydb);
-    if($run == true){
-        while($row=mysqli_fetch_array($run)){
-            $a =$row[0];
-            $y=$row[1];
-            $c  =$row[2];
-            $d =$row[3];
-            $e =$row[5];
-            $f =$row[6];
-            $g =$row[7];
-            $h =$row[4];
-            $i =$row[8];
-            $j =$row[9];
-            $k =$row[10];
+<section class="content">
+  <div class="container-fluid">
 
-            echo'<h4>'."Item id".'</h4>';
-            echo$a;
-            echo'<h4>'."Item name".'</h4>';
-            echo$c;
-            echo'<h4>'."Quantity".'</h4>';
-            echo$d;
-            echo'<h4>'."Type".'</h4>';
-            echo$h;
-            echo'<h4>'."Specifications".'</h4>';
-            echo$e;
-            echo'<h4>'."Required documents".'</h4>';
-            echo$f;
-            echo'<br/>';
-            echo$g; 
-            echo'<br/>';
-            echo$i; 
-            echo'<h4>'."Other requirements".'</h4>';
-            echo$j;
-            echo'<h4>'."Deadline for tender apllication".'</h4>';
-            echo$k;
-            echo'<br/>';
-            echo'<br/>';
-            echo'<div class="row">
-            <div class="col-sm-4">
-            <a    href="apply.php?id='.$y.'"  class="btn btn-primary btn-xm  ">  Apply</a> 
-            </div>
-            
-            
-            </div>';
+  </div>
 
-
-         }
-     }           
-   ?>
-
+</section>
 
 
     </div>
